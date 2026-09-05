@@ -2,6 +2,16 @@ from flask import Flask, render_template, flash, request,session,redirect
 #from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 from werkzeug.utils import secure_filename
 import mysql.connector
+import os
+
+def get_db_connection():
+    return mysql.connector.connect(
+        user=os.getenv('DB_USER'),
+        password=os.getenv('DB_PASSWORD'),
+        host=os.getenv('DB_HOST'),
+        database=os.getenv('DB_NAME'),
+        port=int(os.getenv('DB_PORT', 3306))
+    )
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
@@ -102,7 +112,7 @@ def newadmission():
     address = request.form['address']
     department = request.form['department']
     hp = request.form['percentage']
-    conn = mysql.connector.connect(user='root', password='', host='localhost', database='sample')
+    conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("insert into admission value('" + name + "','" + dob + "','" + gender + "','" + email + "','"+phone+"','"+address+"','"+department+"','"+hp+"','"+password+"')")
     conn.commit()
@@ -116,7 +126,7 @@ def newlogin():
     email= request.form['email']
     password = request.form['password']
 
-    conn = mysql.connector.connect(user='root', password='', host='localhost', database='sample')
+   conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("select * from admission where email_address='"+email+"' and email_password='"+password+"'")
     data=cursor.fetchone()
@@ -182,7 +192,7 @@ def addcourse():
         fee = request.form["fee"]
         seats = request.form["seats"]
         description = request.form["description"]
-        conn = mysql.connector.connect(user='root', password='', host='localhost', database='course')
+      conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute(
             "insert into addcourse value('','" + coursename + "','" + department + "','" + duration + "','" + fee+ "','" + seats + "','" + description + "')")
