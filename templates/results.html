@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Results</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>ABC College</h2>
+        <p>Admin Dashboard</p>
+    </div>
+
+    <ul>
+
+        <li><a href="/adminhome"><i class="fas fa-home"></i> Home</a></li>
+
+        <li><a href="/addcourse"><i class="fas fa-book"></i> Add Courses</a></li>
+
+        <li><a href="/viewcourse"><i class="fas fa-list"></i> View Courses</a></li>
+
+        <li><a href="/admissions"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+
+        <li class="active"><a href="/results"><i class="fas fa-square-poll-vertical"></i> Results</a></li>
+
+        <li><a href="/reports"><i class="fas fa-chart-line"></i> Reports</a></li>
+
+        <li><a href="/logout"><i class="fas fa-right-from-bracket"></i> Logout</a></li>
+         <li><a href="/adminlogin">🚪 back to home</a></li>
+
+    </ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+    <div class="topbar">
+
+        <h2>Student Examination Results</h2>
+
+        <div class="profile">
+            Welcome Admin
+        </div>
+
+    </div>
+
+    <div class="table-container">
+
+        <input type="text" class="search" placeholder="Search Student">
+
+        <table>
+
+            <tr>
+
+                <th>Reg No</th>
+                <th>Student Name</th>
+                <th>Department</th>
+                <th>Semester</th>
+                <th>CGPA</th>
+                <th>Result</th>
+                <th>Action</th>
+
+            </tr>
+
+            <tr>
+                <td>101</td>
+                <td>Rahul</td>
+                <td>CSE</td>
+                <td>VI</td>
+                <td>8.90</td>
+                <td style="color:green;"><b>PASS</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>102</td>
+                <td>Priya</td>
+                <td>IT</td>
+                <td>VI</td>
+                <td>9.25</td>
+                <td style="color:green;"><b>PASS</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>103</td>
+                <td>Arun</td>
+                <td>ECE</td>
+                <td>VI</td>
+                <td>7.65</td>
+                <td style="color:green;"><b>PASS</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>104</td>
+                <td>Meena</td>
+                <td>EEE</td>
+                <td>VI</td>
+                <td>6.85</td>
+                <td style="color:red;"><b>FAIL</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>105</td>
+                <td>Karthik</td>
+                <td>MECH</td>
+                <td>VI</td>
+                <td>8.10</td>
+                <td style="color:green;"><b>PASS</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>106</td>
+                <td>John</td>
+                <td>CIVIL</td>
+                <td>VI</td>
+                <td>7.90</td>
+                <td style="color:green;"><b>PASS</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>107</td>
+                <td>Divya</td>
+                <td>CSE</td>
+                <td>VI</td>
+                <td>9.60</td>
+                <td style="color:green;"><b>PASS</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>108</td>
+                <td>Vignesh</td>
+                <td>IT</td>
+                <td>VI</td>
+                <td>8.30</td>
+                <td style="color:green;"><b>PASS</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>109</td>
+                <td>Keerthana</td>
+                <td>ECE</td>
+                <td>VI</td>
+                <td>9.15</td>
+                <td style="color:green;"><b>PASS</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>110</td>
+                <td>Mohamed</td>
+                <td>CSE</td>
+                <td>VI</td>
+                <td>8.45</td>
+                <td style="color:green;"><b>PASS</b></td>
+                <td>
+                    <a href="/viewresult" class="edit">View</a>
+                    <a href="/editresult" class="edit">Edit</a>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

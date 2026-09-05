@@ -1,0 +1,1169 @@
+/* ================= COMMON CSS ================= */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+body{
+    background:#f5f7fb;
+    color:#333;
+}
+
+
+
+
+
+/* ================= HEADER ================= */
+
+
+header{
+
+    background:linear-gradient(135deg,#003366,#0066cc);
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px 20px;
+
+}
+
+
+header h1{
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+    font-weight:bold;
+
+}
+
+
+header p{
+
+    font-size:18px;
+
+    letter-spacing:1px;
+
+}
+
+
+
+
+
+
+
+/* ================= NAVIGATION ================= */
+
+
+nav{
+
+    background:#001f3f;
+
+    padding:15px;
+
+}
+
+
+
+nav ul{
+
+    list-style:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+}
+
+
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    padding:8px 12px;
+
+    transition:0.3s;
+
+}
+
+
+
+nav ul li a:hover{
+
+    background:#007bff;
+
+    border-radius:5px;
+
+}
+
+
+
+
+
+
+/* ================= CONTACT HERO ================= */
+
+
+.contact-hero{
+
+    height:350px;
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),
+
+    url("https://images.unsplash.com/photo-1521791136064-7986c2920216")
+    center/cover;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+
+
+.contact-overlay{
+
+    color:white;
+
+}
+
+
+
+.contact-overlay h1{
+
+    font-size:50px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.contact-overlay p{
+
+    font-size:20px;
+
+}/* ================= CONTACT INFORMATION ================= */
+
+
+.contact-info{
+
+    padding:60px 8%;
+
+    text-align:center;
+
+    background:white;
+
+}
+
+
+
+.contact-info h2{
+
+    font-size:36px;
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.contact-info > p{
+
+    font-size:18px;
+
+    margin-bottom:40px;
+
+    color:#555;
+
+}
+
+
+
+
+
+
+/* Contact Card Container */
+
+
+.contact-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+
+
+
+
+/* Contact Cards */
+
+
+.contact-card{
+
+    background:#ffffff;
+
+    padding:35px 25px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+
+    transition:0.4s;
+
+    border-top:5px solid #0066cc;
+
+}
+
+
+
+
+
+.contact-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+}
+
+
+
+
+
+
+
+.contact-card i{
+
+    font-size:45px;
+
+    color:#0066cc;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.contact-card h3{
+
+    font-size:22px;
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.contact-card p{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#555;
+
+}/* ================= CONTACT FORM ================= */
+
+
+.contact-form-section{
+
+    padding:60px 10%;
+
+    background:#f5f7fb;
+
+    text-align:center;
+
+}
+
+
+
+.contact-form-section h2{
+
+    font-size:36px;
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.contact-form-section p{
+
+    font-size:18px;
+
+    color:#555;
+
+    margin-bottom:35px;
+
+}
+
+
+
+
+
+
+
+/* Form Container */
+
+
+.form-container{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+
+}
+
+
+
+
+
+
+
+/* Labels */
+
+
+.form-container label{
+
+    display:block;
+
+    text-align:left;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+    color:#003366;
+
+}
+
+
+
+
+
+
+
+/* Input Fields */
+
+
+.form-container input,
+
+.form-container textarea{
+
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:20px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:0.3s;
+
+}
+
+
+
+.form-container input:focus,
+
+.form-container textarea:focus{
+
+    border-color:#0066cc;
+
+    box-shadow:0 0 8px rgba(0,102,204,0.3);
+
+}
+
+
+
+
+
+
+
+/* Submit Button */
+
+
+.form-container button{
+
+
+    width:200px;
+
+    padding:14px;
+
+    background:#0066cc;
+
+    color:white;
+
+    border:none;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+
+.form-container button:hover{
+
+
+    background:#003366;
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+
+
+
+
+/* ================= GOOGLE MAP ================= */
+
+
+.map-section{
+
+    padding:50px 8%;
+
+    background:white;
+
+    text-align:center;
+
+}
+
+
+
+.map-section h2{
+
+    font-size:35px;
+
+    color:#003366;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.map-section iframe{
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+}/* ================= SOCIAL MEDIA ================= */
+
+
+.social-section{
+
+    padding:60px 8%;
+
+    background:#f5f7fb;
+
+    text-align:center;
+
+}
+
+
+
+.social-section h2{
+
+    font-size:36px;
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.social-section p{
+
+    font-size:18px;
+
+    color:#555;
+
+    margin-bottom:40px;
+
+}
+
+
+
+
+
+.social-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+
+
+
+.social-card{
+
+    background:white;
+
+    padding:35px 20px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+    transition:0.3s;
+
+}
+
+
+
+
+
+.social-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+
+
+.social-card i{
+
+    font-size:45px;
+
+    color:#0066cc;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.social-card h3{
+
+    color:#003366;
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+
+.social-card p{
+
+    color:#555;
+
+    font-size:16px;
+
+}
+
+
+
+
+
+
+
+
+/* ================= FAQ SECTION ================= */
+
+
+.contact-faq{
+
+    padding:60px 8%;
+
+    background:white;
+
+    text-align:center;
+
+}
+
+
+
+.contact-faq h2{
+
+    font-size:36px;
+
+    color:#003366;
+
+    margin-bottom:40px;
+
+}
+
+
+
+
+
+.faq-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+
+
+
+
+.faq-box{
+
+    background:#f5f7fb;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    text-align:left;
+
+    border-left:5px solid #0066cc;
+
+    transition:0.3s;
+
+}
+
+
+
+
+
+.faq-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+
+
+.faq-box h3{
+
+    font-size:20px;
+
+    color:#003366;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+.faq-box i{
+
+    color:#0066cc;
+
+    margin-right:10px;
+
+}
+
+
+
+
+
+.faq-box p{
+
+    font-size:16px;
+
+    color:#555;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= CONTACT BANNER ================= */
+
+
+.contact-banner{
+
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,51,102,0.8),
+
+    rgba(0,102,204,0.8)
+
+    ),
+
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1")
+
+    center/cover;
+
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+
+
+
+.contact-banner h1{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.contact-banner p{
+
+    font-size:20px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+.contact-banner .btn{
+
+
+    display:inline-block;
+
+    padding:14px 35px;
+
+    background:white;
+
+    color:#003366;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+}
+
+
+
+
+
+.contact-banner .btn:hover{
+
+
+    background:#001f3f;
+
+    color:white;
+
+}/* ================= FOOTER ================= */
+
+
+footer{
+
+    background:#001f3f;
+
+    color:white;
+
+    padding-top:50px;
+
+}
+
+
+
+
+.footer-container{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:40px;
+
+    padding-bottom:40px;
+
+}
+
+
+
+
+
+.footer-box h2{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.footer-box h3{
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+    color:#00aaff;
+
+}
+
+
+
+
+
+.footer-box p{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#ddd;
+
+}
+
+
+
+
+
+.footer-box ul{
+
+    list-style:none;
+
+}
+
+
+
+
+
+.footer-box ul li{
+
+    margin-bottom:12px;
+
+}
+
+
+
+
+
+.footer-box ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    transition:0.3s;
+
+}
+
+
+
+
+
+.footer-box ul li a:hover{
+
+    color:#00aaff;
+
+    padding-left:8px;
+
+}
+
+
+
+
+
+
+
+.footer-box i{
+
+    color:#00aaff;
+
+    margin-right:10px;
+
+}
+
+
+
+
+
+
+
+/* Social Icons */
+
+
+.social{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+
+.social a{
+
+    width:45px;
+
+    height:45px;
+
+    background:white;
+
+    color:#003366;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    transition:0.3s;
+
+}
+
+
+
+.social a:hover{
+
+    background:#0066cc;
+
+    color:white;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+
+
+
+
+/* ================= COPYRIGHT ================= */
+
+
+.copyright{
+
+    background:#000d1a;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+
+.copyright p{
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+
+@media(max-width:768px){
+
+
+
+header h1{
+
+    font-size:28px;
+
+}
+
+
+
+nav ul{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+
+.contact-overlay h1{
+
+    font-size:35px;
+
+}
+
+
+
+
+.contact-overlay p{
+
+    font-size:16px;
+
+}
+
+
+
+
+
+.form-container{
+
+    padding:25px;
+
+}
+
+
+
+
+
+.contact-banner h1{
+
+    font-size:30px;
+
+}
+
+
+
+
+
+.footer-container{
+
+    text-align:center;
+
+}
+
+
+
+
+
+.social{
+
+    justify-content:center;
+
+}
+
+
+
+}

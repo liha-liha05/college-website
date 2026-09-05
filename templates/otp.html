@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='otp.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="otp-container">
+
+    <div class="otp-box">
+
+        <i class="fas fa-shield-alt otp-icon"></i>
+
+        <h2>OTP Verification</h2>
+
+        <p>
+            Enter the 6-digit OTP to continue.
+        </p>
+
+        <form action="/verifyotp" method="POST">
+
+            <input
+                type="text"
+                name="otp"
+                maxlength="6"
+                minlength="6"
+                placeholder="Enter 6-Digit OTP"
+                required>
+
+            <button type="submit">
+                Verify OTP
+            </button>
+
+        </form>
+
+        <a href="/login" class="back-btn">
+            Back to Login
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

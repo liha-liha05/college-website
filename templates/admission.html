@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admission - ABC College</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='admission.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+
+<header>
+
+<h1>
+ABC College of Engineering
+</h1>
+
+<p>
+Knowledge | Innovation | Excellence
+</p>
+
+</header>
+
+
+
+
+
+<!-- ================= NAVIGATION ================= -->
+
+
+<nav>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/about">About</a></li>
+
+<li><a href="/services">Services</a></li>
+
+<li><a href="/departments">Departments</a></li>
+
+<li><a href="/admission">Admission</a></li>
+
+<li><a href="/contact">Contact</a></li>
+    <li><a href="/admin">Admin</a></li>
+
+<li><a href="/login">Student Login</a></li>
+
+
+
+
+
+</ul>
+
+</nav>
+
+
+
+
+
+<!-- ================= ADMISSION HERO ================= -->
+
+
+<section class="admission-banner">
+
+
+<div>
+
+
+<h1>
+Start Your Engineering Journey
+</h1>
+
+
+<p>
+Join ABC College of Engineering and build your future with quality education and innovation.
+</p>
+
+
+<a href="#form">
+Apply Now
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= ADMISSION INFORMATION ================= -->
+
+
+<section class="admission-info">
+
+
+<h2>
+Admission Process
+</h2>
+
+
+<p>
+
+ABC College provides a simple and transparent admission process
+for students who want to pursue engineering education.
+
+</p>
+
+
+
+<div class="admission-container">
+
+
+
+<div class="admission-card">
+
+
+<h3>
+Step 1
+</h3>
+
+
+<h4>
+Online Registration
+</h4>
+
+
+<p>
+Fill the online application form with your personal and academic details.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="admission-card">
+
+
+<h3>
+Step 2
+</h3>
+
+
+<h4>
+Document Verification
+</h4>
+
+
+<p>
+Submit required certificates and verify your admission details.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="admission-card">
+
+
+<h3>
+Step 3
+</h3>
+
+
+<h4>
+Confirmation
+</h4>
+
+
+<p>
+Complete admission process and confirm your engineering seat.
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= APPLICATION FORM ================= -->
+
+
+<section class="admission-form" id="form">
+
+
+<h2>
+Online Admission Form
+</h2>
+
+
+<p>
+Fill the details to apply for admission.
+</p>
+
+
+
+
+<form action="/newadmission" method="POST">
+
+
+
+<label>
+Full Name
+</label>
+
+<input type="text" name="fullname" required>
+
+
+
+
+<label>
+Date of Birth
+</label>
+
+<input type="date" name="dob" required>
+
+
+
+
+
+<label>
+Gender
+</label>
+
+<select name="gender">
+
+<option>Select Gender</option>
+
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+
+
+
+
+<label>
+Email Address
+</label>
+
+<input type="email" name="email" required>
+
+
+
+
+
+<label>
+Password
+</label>
+
+<input type="password" name="password" required>
+
+
+
+
+
+<label>
+Phone Number
+</label>
+
+<input type="tel" name="phone" required>
+
+
+
+
+
+<label>
+Address
+</label>
+
+<textarea name="address"></textarea>
+
+
+
+
+
+<label>
+Select Department
+</label>
+
+
+<select name="department">
+
+
+<option>
+Choose Department
+</option>
+
+
+<option>
+Computer Science Engineering
+</option>
+
+
+<option>
+Information Technology
+</option>
+
+
+<option>
+Electronics & Communication Engineering
+</option>
+
+
+<option>
+Electrical & Electronics Engineering
+</option>
+
+
+<option>
+Mechanical Engineering
+</option>
+
+
+<option>
+Civil Engineering
+</option>
+
+
+</select>
+
+
+
+
+
+<label>
+Higher Secondary Percentage
+</label>
+
+<input type="number"
+name="percentage"
+min="0"
+max="100">
+
+
+
+
+
+<button type="submit">
+
+Apply Admission
+
+</button>
+
+
+
+</form>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ================= WHY JOIN ================= -->
+
+
+<section class="why-admission">
+
+
+<h2>
+Why Choose ABC College?
+</h2>
+
+
+
+<div class="why-container">
+
+
+
+<div>
+
+<h3>
+Experienced Faculty
+</h3>
+
+<p>
+Highly qualified professors with industry experience.
+</p>
+
+</div>
+
+
+
+
+
+<div>
+
+<h3>
+Modern Campus
+</h3>
+
+<p>
+Advanced laboratories and smart classrooms.
+</p>
+
+</div>
+
+
+
+
+
+<div>
+
+<h3>
+Placement Support
+</h3>
+
+<p>
+Training programs and company opportunities.
+</p>
+
+</div>
+
+
+
+
+<div>
+
+<h3>
+Scholarships
+</h3>
+
+<p>
+Financial support for deserving students.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+
+<footer>
+
+
+<p>
+
+© 2026 ABC College of Engineering |
+All Rights Reserved
+
+</p>
+
+
+</footer>
+
+
+
+</body>
+
+</html>

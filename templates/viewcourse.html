@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Courses</title>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='admin.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+<h2>ABC College</h2>
+<p>Admin Dashboard</p>
+</div>
+
+<ul>
+
+<li><a href="/adminhome"><i class="fas fa-home"></i> Home</a></li>
+
+<li><a href="/addcourse"><i class="fas fa-book"></i> Add Courses</a></li>
+
+<li class="active"><a href="/viewcourse"><i class="fas fa-list"></i> View Courses</a></li>
+
+<li><a href="/admissions"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+
+<li><a href="/results"><i class="fas fa-poll"></i> Results</a></li>
+
+<li><a href="/reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+
+<li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+     <li><a href="/adminlogin">🚪 back to home</a></li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="topbar">
+
+<h2>View Courses</h2>
+
+<div class="profile">
+Welcome Admin
+</div>
+
+</div>
+
+<div class="table-container">
+
+<input type="text" placeholder="Search Course..." class="search">
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Course ID</th>
+<th>Course Name</th>
+<th>Department</th>
+<th>Duration</th>
+<th>Fee</th>
+<th>Action</th>
+
+</tr>
+
+<tr><td>1</td><td>CSE101</td><td>Computer Science</td><td>CSE</td><td>4 Years</td><td>₹50,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+<tr><td>2</td><td>IT102</td><td>Information Technology</td><td>IT</td><td>4 Years</td><td>₹48,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+<tr><td>3</td><td>ECE103</td><td>Electronics & Communication</td><td>ECE</td><td>4 Years</td><td>₹47,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+<tr><td>4</td><td>EEE104</td><td>Electrical Engineering</td><td>EEE</td><td>4 Years</td><td>₹46,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+<tr><td>5</td><td>CIV105</td><td>Civil Engineering</td><td>CIVIL</td><td>4 Years</td><td>₹45,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+<tr><td>6</td><td>MEC106</td><td>Mechanical Engineering</td><td>MECH</td><td>4 Years</td><td>₹49,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+<tr><td>7</td><td>AIML107</td><td>Artificial Intelligence</td><td>CSE</td><td>4 Years</td><td>₹55,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+<tr><td>8</td><td>DS108</td><td>Data Science</td><td>CSE</td><td>4 Years</td><td>₹54,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+<tr><td>9</td><td>CY109</td><td>Cyber Security</td><td>IT</td><td>4 Years</td><td>₹56,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+<tr><td>10</td><td>ROB110</td><td>Robotics Engineering</td><td>MECH</td><td>4 Years</td><td>₹60,000</td><td><a href="/editcourse" class="edit">Edit</a> <a href="/deletecourse" class="delete">Delete</a></td></tr>
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>

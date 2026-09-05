@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile | ABC College</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+
+        <h1>ABC College of Engineering</h1>
+
+        <p>Knowledge | Innovation | Excellence</p>
+
+    </div>
+
+    <div class="profile-top">
+
+        <i class="fas fa-user-circle"></i>
+
+        <span>Welcome {{ session['username'] }}</span>
+
+        <a href="/slogout" class="logout-btn">Logout</a>
+
+    </div>
+
+</header>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<ul>
+
+<li><a href="/userhome">Home</a></li>
+
+<li><a href="/profile" class="active">Profile</a></li>
+
+<li><a href="/attendance">Attendance</a></li>
+
+<li><a href="/result">Result</a></li>
+
+<li><a href="/courses">Courses</a></li>
+    <li><a href="/contact2" class="active">Contact</a></li>
+
+<li><a href="/notice">notice</a></li>
+
+</ul>
+
+</nav>
+
+<!-- ================= PROFILE BANNER ================= -->
+
+<section class="profile-banner">
+
+    <div class="banner-overlay">
+
+        <h1>Student Profile</h1>
+
+        <p>Manage your personal and academic information.</p>
+
+    </div>
+
+</section>
+
+<!-- ================= PROFILE CARD ================= -->
+
+<section class="student-profile">
+
+    <div class="profile-card">
+
+        <div class="profile-image">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Student">
+
+            <h2>{{ session['username'] }}</h2>
+
+            <p>Computer Science Engineering</p>
+
+        </div>
+
+        <div class="profile-details">
+
+            <h2>Personal Information</h2>
+
+            <table>
+
+                <tr>
+                    <th>Student ID</th>
+                    <td>2026CSE001</td>
+                </tr>
+
+                <tr>
+                    <th>Full Name</th>
+                    <td>{{ session['username'] }}</td>
+                </tr>
+
+                <tr>
+                    <th>Date of Birth</th>
+                    <td>15-05-2005</td>
+                </tr>
+
+                <tr>
+                    <th>Gender</th>
+                    <td>Male</td>
+                </tr>
+
+                <tr>
+                    <th>Email</th>
+                    <td>student@abccollege.edu.in</td>
+                </tr>
+
+                <tr>
+                    <th>Phone</th>
+                    <td>+91 9876543210</td>
+                </tr>
+
+                <tr>
+                    <th>Department</th>
+                    <td>Computer Science Engineering</td>
+                </tr>
+
+                <tr>
+                    <th>Year</th>
+                    <td>III Year</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section><!-- ================= ACADEMIC DETAILS ================= -->
+
+<section class="academic-details">
+
+    <h2>Academic Information</h2>
+
+    <div class="academic-container">
+
+        <table>
+
+            <tr>
+                <th>Register Number</th>
+                <td>2026CSE001</td>
+            </tr>
+
+            <tr>
+                <th>Department</th>
+                <td>Computer Science Engineering</td>
+            </tr>
+
+            <tr>
+                <th>Year</th>
+                <td>III Year</td>
+            </tr>
+
+            <tr>
+                <th>Semester</th>
+                <td>V Semester</td>
+            </tr>
+
+            <tr>
+                <th>Section</th>
+                <td>A</td>
+            </tr>
+
+            <tr>
+                <th>Academic Year</th>
+                <td>2026 - 2027</td>
+            </tr>
+
+            <tr>
+                <th>Class Advisor</th>
+                <td>Dr. R. Kumar</td>
+            </tr>
+
+            <tr>
+                <th>Current CGPA</th>
+                <td>8.92</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PARENT DETAILS ================= -->
+
+<section class="parent-details">
+
+    <h2>Parent / Guardian Information</h2>
+
+    <div class="parent-container">
+
+        <div class="parent-card">
+
+            <i class="fas fa-user-tie"></i>
+
+            <h3>Father's Name</h3>
+
+            <p>Mohammed Ibrahim</p>
+
+        </div>
+
+        <div class="parent-card">
+
+            <i class="fas fa-user"></i>
+
+            <h3>Mother's Name</h3>
+
+            <p>Fathima Begum</p>
+
+        </div>
+
+        <div class="parent-card">
+
+            <i class="fas fa-phone"></i>
+
+            <h3>Parent Contact</h3>
+
+            <p>+91 9876543210</p>
+
+        </div>
+
+        <div class="parent-card">
+
+            <i class="fas fa-envelope"></i>
+
+            <h3>Email</h3>
+
+            <p>parent@gmail.com</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ADDRESS DETAILS ================= -->
+
+<section class="address">
+
+    <h2>Address Details</h2>
+
+    <div class="address-box">
+
+        <p><strong>Permanent Address</strong></p>
+
+        <p>
+            25, Main Road,<br>
+            Ramanathapuram,<br>
+            Tamil Nadu - 623501.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EMERGENCY CONTACT ================= -->
+
+<section class="emergency">
+
+    <h2>Emergency Contact</h2>
+
+    <div class="emergency-container">
+
+        <div class="emergency-card">
+
+            <i class="fas fa-ambulance"></i>
+
+            <h3>Emergency Contact Person</h3>
+
+            <p>Mohammed Ibrahim</p>
+
+        </div>
+
+        <div class="emergency-card">
+
+            <i class="fas fa-phone-alt"></i>
+
+            <h3>Mobile Number</h3>
+
+            <p>+91 9876543210</p>
+
+        </div>
+
+        <div class="emergency-card">
+
+            <i class="fas fa-heart"></i>
+
+            <h3>Blood Group</h3>
+
+            <p>O Positive</p>
+
+        </div>
+
+    </div>
+
+</section><!-- ================= SEMESTER RESULTS ================= -->
+
+<section class="semester-results">
+
+    <h2>Semester Results</h2>
+
+    <div class="result-container">
+
+        <table>
+
+            <tr>
+                <th>Semester</th>
+                <th>CGPA</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>I Semester</td>
+                <td>8.45</td>
+                <td>Pass</td>
+            </tr>
+
+            <tr>
+                <td>II Semester</td>
+                <td>8.62</td>
+                <td>Pass</td>
+            </tr>
+
+            <tr>
+                <td>III Semester</td>
+                <td>8.81</td>
+                <td>Pass</td>
+            </tr>
+
+            <tr>
+                <td>IV Semester</td>
+                <td>8.94</td>
+                <td>Pass</td>
+            </tr>
+
+            <tr>
+                <td>Current CGPA</td>
+                <td><strong>8.71</strong></td>
+                <td>Excellent</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ATTENDANCE ================= -->
+
+<section class="attendance-details">
+
+    <h2>Attendance Details</h2>
+
+    <div class="attendance-container">
+
+        <div class="attendance-card">
+
+            <i class="fas fa-calendar-check"></i>
+
+            <h3>Overall Attendance</h3>
+
+            <h1>92%</h1>
+
+        </div>
+
+        <div class="attendance-card">
+
+            <i class="fas fa-book-open"></i>
+
+            <h3>Classes Attended</h3>
+
+            <h1>178</h1>
+
+        </div>
+
+        <div class="attendance-card">
+
+            <i class="fas fa-times-circle"></i>
+
+            <h3>Classes Absent</h3>
+
+            <h1>15</h1>
+
+        </div>
+
+        <div class="attendance-card">
+
+            <i class="fas fa-user-check"></i>
+
+            <h3>Eligibility</h3>
+
+            <h1>Eligible</h1>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ENROLLED COURSES ================= -->
+
+<section class="courses">
+
+    <h2>Current Semester Courses</h2>
+
+    <div class="course-container">
+
+        <div class="course-card">
+            <h3>Software Engineering</h3>
+            <p>Course Code : SE501</p>
+        </div>
+
+        <div class="course-card">
+            <h3>Database Management System</h3>
+            <p>Course Code : DB502</p>
+        </div>
+
+        <div class="course-card">
+            <h3>Computer Networks</h3>
+            <p>Course Code : CN503</p>
+        </div>
+
+        <div class="course-card">
+            <h3>Web Technology</h3>
+            <p>Course Code : WT504</p>
+        </div>
+
+        <div class="course-card">
+            <h3>Python Programming</h3>
+            <p>Course Code : PY505</p>
+        </div>
+
+        <div class="course-card">
+            <h3>Mini Project</h3>
+            <p>Course Code : MP506</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="skills">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skill-container">
+
+        <span class="skill">Python</span>
+
+        <span class="skill">Java</span>
+
+        <span class="skill">C Programming</span>
+
+        <span class="skill">HTML</span>
+
+        <span class="skill">CSS</span>
+
+        <span class="skill">JavaScript</span>
+
+        <span class="skill">Flask</span>
+
+        <span class="skill">MySQL</span>
+
+        <span class="skill">Git & GitHub</span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CERTIFICATES ================= -->
+
+<section class="certificates">
+
+    <h2>Certificates & Achievements</h2>
+
+    <div class="certificate-container">
+
+        <div class="certificate-card">
+
+            <i class="fas fa-award"></i>
+
+            <h3>Python Programming</h3>
+
+            <p>Completed Advanced Python Course.</p>
+
+        </div>
+
+        <div class="certificate-card">
+
+            <i class="fas fa-laptop-code"></i>
+
+            <h3>Web Development</h3>
+
+            <p>Successfully completed Full Stack Workshop.</p>
+
+        </div>
+
+        <div class="certificate-card">
+
+            <i class="fas fa-trophy"></i>
+
+            <h3>Hackathon 2026</h3>
+
+            <p>Won 2nd Prize in College Level Hackathon.</p>
+
+        </div>
+
+    </div>
+
+</section><!-- ================= FEE DETAILS ================= -->
+
+<section class="fee-details">
+
+    <h2>Fee Details</h2>
+
+    <div class="fee-container">
+
+        <table>
+
+            <tr>
+                <th>Fee Type</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Tuition Fee</td>
+                <td>₹65,000</td>
+                <td><span class="paid">Paid</span></td>
+            </tr>
+
+            <tr>
+                <td>Hostel Fee</td>
+                <td>₹35,000</td>
+                <td><span class="paid">Paid</span></td>
+            </tr>
+
+            <tr>
+                <td>Exam Fee</td>
+                <td>₹2,500</td>
+                <td><span class="pending">Pending</span></td>
+            </tr>
+
+            <tr>
+                <td>Library Fee</td>
+                <td>₹1,000</td>
+                <td><span class="paid">Paid</span></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= INTERNSHIP DETAILS ================= -->
+
+<section class="internship">
+
+    <h2>Internship Details</h2>
+
+    <div class="internship-container">
+
+        <div class="internship-card">
+
+            <i class="fas fa-briefcase"></i>
+
+            <h3>Company</h3>
+
+            <p>ABC Technologies Pvt. Ltd.</p>
+
+        </div>
+
+        <div class="internship-card">
+
+            <i class="fas fa-calendar-alt"></i>
+
+            <h3>Duration</h3>
+
+            <p>2 Months</p>
+
+        </div>
+
+        <div class="internship-card">
+
+            <i class="fas fa-laptop-code"></i>
+
+            <h3>Domain</h3>
+
+            <p>Full Stack Web Development</p>
+
+        </div>
+
+        <div class="internship-card">
+
+            <i class="fas fa-check-circle"></i>
+
+            <h3>Status</h3>
+
+            <p>Completed</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STUDENT PROJECTS ================= -->
+
+<section class="projects">
+
+    <h2>Academic Projects</h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+
+            <i class="fas fa-robot"></i>
+
+            <h3>GuardianDrive AI</h3>
+
+            <p>
+                AI-based accident prevention system for two-wheelers
+                using sensors and machine learning.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <i class="fas fa-globe"></i>
+
+            <h3>College Management System</h3>
+
+            <p>
+                Developed using HTML, CSS, Flask and MySQL
+                with student and admin modules.
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <i class="fas fa-mobile-alt"></i>
+
+            <h3>Weather Application</h3>
+
+            <p>
+                Weather forecasting web application using
+                Weather API and JavaScript.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PLACEMENT STATUS ================= -->
+
+<section class="placement-status">
+
+    <h2>Placement Status</h2>
+
+    <div class="placement-container">
+
+        <div class="placement-card">
+
+            <i class="fas fa-building"></i>
+
+            <h3>Campus Placement</h3>
+
+            <p>Eligible</p>
+
+        </div>
+
+        <div class="placement-card">
+
+            <i class="fas fa-file-signature"></i>
+
+            <h3>Resume Status</h3>
+
+            <p>Uploaded</p>
+
+        </div>
+
+        <div class="placement-card">
+
+            <i class="fas fa-user-check"></i>
+
+            <h3>Mock Interview</h3>
+
+            <p>Completed</p>
+
+        </div>
+
+        <div class="placement-card">
+
+            <i class="fas fa-chart-line"></i>
+
+            <h3>Placement Training</h3>
+
+            <p>Ongoing</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DOCUMENTS ================= -->
+
+<section class="documents">
+
+    <h2>Student Documents</h2>
+
+    <div class="document-container">
+
+        <a href="#" class="document-card">
+
+            <i class="fas fa-id-card"></i>
+
+            <h3>Student ID Card</h3>
+
+        </a>
+
+        <a href="#" class="document-card">
+
+            <i class="fas fa-file-pdf"></i>
+
+            <h3>Bonafide Certificate</h3>
+
+        </a>
+
+        <a href="#" class="document-card">
+
+            <i class="fas fa-file-alt"></i>
+
+            <h3>Mark Statements</h3>
+
+        </a>
+
+        <a href="#" class="document-card">
+
+            <i class="fas fa-download"></i>
+
+            <h3>Fee Receipt</h3>
+
+        </a>
+
+    </div>
+
+</section><!-- ================= STUDENT TIMELINE ================= -->
+
+<section class="timeline">
+
+    <h2>Academic Timeline</h2>
+
+    <div class="timeline-container">
+
+        <div class="timeline-item">
+            <span class="timeline-date">June 2024</span>
+            <h3>Admission Completed</h3>
+            <p>Successfully enrolled in ABC College of Engineering.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">December 2024</span>
+            <h3>First Semester Completed</h3>
+            <p>Successfully passed all subjects with good grades.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">August 2025</span>
+            <h3>Mini Project Completed</h3>
+            <p>Developed a College Management System using Flask.</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">March 2026</span>
+            <h3>Internship Completed</h3>
+            <p>Successfully completed Full Stack Web Development internship.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FACULTY MENTOR ================= -->
+
+<section class="mentor">
+
+    <h2>Faculty Mentor</h2>
+
+    <div class="mentor-card">
+
+        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Mentor">
+
+        <div class="mentor-info">
+
+            <h3>Dr. R. Kumar</h3>
+
+            <p>Professor - Computer Science Engineering</p>
+
+            <p>Email : rkumar@abccollege.edu.in</p>
+
+            <p>Phone : +91 9876543210</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= NOTIFICATIONS ================= -->
+
+<section class="notifications">
+
+    <h2>Latest Notifications</h2>
+
+    <div class="notification-container">
+
+        <div class="notification-card">
+            <i class="fas fa-bullhorn"></i>
+            <p>Semester Examination starts from 15 November 2026.</p>
+        </div>
+
+        <div class="notification-card">
+            <i class="fas fa-calendar-check"></i>
+            <p>Placement Training on every Saturday.</p>
+        </div>
+
+        <div class="notification-card">
+            <i class="fas fa-award"></i>
+            <p>Scholarship applications are now open.</p>
+        </div>
+
+        <div class="notification-card">
+            <i class="fas fa-laptop-code"></i>
+            <p>National Level Hackathon registrations have started.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FEEDBACK ================= -->
+
+<section class="feedback">
+
+    <h2>Student Feedback</h2>
+
+    <form action="/feedback" method="POST">
+
+        <input type="text"
+               name="name"
+               placeholder="Your Name"
+               required>
+
+        <input type="email"
+               name="email"
+               placeholder="Your Email"
+               required>
+
+        <textarea
+            name="feedback"
+            rows="6"
+            placeholder="Write your valuable feedback..."
+            required></textarea>
+
+        <button type="submit">
+            Submit Feedback
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h2>ABC College of Engineering</h2>
+
+            <p>
+                Knowledge | Innovation | Excellence
+            </p>
+
+            <p>
+                Empowering students with quality education,
+                innovation and career opportunities.
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="/userhome">Home</a></li>
+                <li><a href="/myprofile">My Profile</a></li>
+                <li><a href="/mycourses">Courses</a></li>
+                <li><a href="/results">Results</a></li>
+                <li><a href="/contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact</h3>
+
+            <p>ABC College of Engineering</p>
+            <p>Chennai, Tamil Nadu</p>
+            <p>+91 9876543210</p>
+            <p>info@abccollege.edu.in</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Follow Us</h3>
+
+            <div class="social">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 ABC College of Engineering | All Rights Reserved
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

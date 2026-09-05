@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ABC College</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>ABC College of Engineering</h1>
+        <p>Knowledge | Innovation | Excellence</p>
+    </header>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+       <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">services</a></li>
+            <li><a href="/departments">Departments</a></li>
+            <li><a href="/admission">Admission</a></li>
+             <li><a href="/contact">Contact</a></li>
+            <li><a href="/login">Student Login</a></li>
+             <li><a href="/admin">admin</a></li>
+             <li><a href="/user">user</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h1>Login</h1>
+
+        <form action="/newlogin" method="POST">
+
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Enter your email" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <p class="register-link">
+            Don't have an account?
+            <a href="/register">Register Here</a>
+        </p>
+    </div>
+
+</body>
+</html>

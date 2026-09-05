@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+           <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">services</a></li>
+            <li><a href="/departments">Departments</a></li>
+            <li><a href="/admission">Admission</a></li>
+             <li><a href="/contact">Contact</a></li>
+            <li><a href="/login">Student Login</a></li>
+        </ul>
+        </ul>
+    </nav>
+
+    <!-- Registration Form -->
+    <div class="register-container">
+        <h1>Register</h1>
+
+        <form action="/newregister" method="POST">
+
+            <label>Full Name</label>
+            <input type="text" name="fullname" placeholder="Enter your full name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="Enter your phone number" required>
+
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter password" required>
+
+            <label>Confirm Password</label>
+            <input type="password" name="confirm_password" placeholder="Confirm password" required>
+
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+
+</body>
+</html>>

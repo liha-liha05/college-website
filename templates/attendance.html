@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Attendance | ABC College</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='attendance.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+
+        <h1>ABC College of Engineering</h1>
+
+        <p>Knowledge | Innovation | Excellence</p>
+
+    </div>
+
+    <div class="student-info">
+
+        <i class="fas fa-user-circle"></i>
+
+        <span>Welcome {{ session['username'] }}</span>
+
+        <a href="/slogout" class="logout-btn">Logout</a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <ul>
+
+        <li><a href="/userhome">Home</a></li>
+
+        <li><a href="/profile">Profile</a></li>
+
+        <li><a href="/attendance" class="active">Attendance</a></li>
+
+        <li><a href="/result">Result</a></li>
+
+        <li><a href="/mycourses">Courses</a></li>
+
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/notice" class="active">Notice</a></li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- ================= BANNER ================= -->
+
+<section class="attendance-banner">
+
+    <div class="overlay">
+
+        <h1>Student Attendance</h1>
+
+        <p>
+
+            View your subject-wise attendance and overall attendance
+            percentage.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STUDENT DETAILS ================= -->
+
+<section class="student-details">
+
+    <h2>Student Information</h2>
+
+    <div class="details-container">
+
+        <div class="detail-card">
+
+            <i class="fas fa-id-card"></i>
+
+            <h3>Register Number</h3>
+
+            <p>2026CSE001</p>
+
+        </div>
+
+        <div class="detail-card">
+
+            <i class="fas fa-user"></i>
+
+            <h3>Student Name</h3>
+
+            <p>{{ session['username'] }}</p>
+
+        </div>
+
+        <div class="detail-card">
+
+            <i class="fas fa-building"></i>
+
+            <h3>Department</h3>
+
+            <p>Computer Science Engineering</p>
+
+        </div>
+
+        <div class="detail-card">
+
+            <i class="fas fa-graduation-cap"></i>
+
+            <h3>Semester</h3>
+
+            <p>V Semester</p>
+
+        </div>
+
+    </div>
+
+</section><!-- ================= OVERALL ATTENDANCE ================= -->
+
+<section class="overall-attendance">
+
+    <h2>Overall Attendance Summary</h2>
+
+    <div class="overall-container">
+
+        <div class="overall-card">
+
+            <i class="fas fa-calendar-check"></i>
+
+            <h3>Overall Attendance</h3>
+
+            <h1>92%</h1>
+
+            <p>Excellent Attendance</p>
+
+        </div>
+
+        <div class="overall-card">
+
+            <i class="fas fa-book-reader"></i>
+
+            <h3>Total Classes</h3>
+
+            <h1>210</h1>
+
+            <p>Conducted This Semester</p>
+
+        </div>
+
+        <div class="overall-card">
+
+            <i class="fas fa-user-check"></i>
+
+            <h3>Classes Attended</h3>
+
+            <h1>193</h1>
+
+            <p>Present</p>
+
+        </div>
+
+        <div class="overall-card">
+
+            <i class="fas fa-user-times"></i>
+
+            <h3>Classes Missed</h3>
+
+            <h1>17</h1>
+
+            <p>Absent</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ATTENDANCE PROGRESS ================= -->
+
+<section class="attendance-progress">
+
+    <h2>Attendance Progress</h2>
+
+    <div class="progress-box">
+
+        <div class="progress-title">
+
+            <span>Overall Attendance</span>
+
+            <span>92%</span>
+
+        </div>
+
+        <div class="progress">
+
+            <div class="progress-bar" style="width:92%;"></div>
+
+        </div>
+
+        <p>
+
+            Congratulations! Your attendance is above the required
+            minimum eligibility of <strong>75%</strong>.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MONTHLY ATTENDANCE ================= -->
+
+<section class="monthly-attendance">
+
+    <h2>Monthly Attendance</h2>
+
+    <div class="month-container">
+
+        <div class="month-card">
+
+            <h3>January</h3>
+
+            <h1>95%</h1>
+
+        </div>
+
+        <div class="month-card">
+
+            <h3>February</h3>
+
+            <h1>90%</h1>
+
+        </div>
+
+        <div class="month-card">
+
+            <h3>March</h3>
+
+            <h1>94%</h1>
+
+        </div>
+
+        <div class="month-card">
+
+            <h3>April</h3>
+
+            <h1>91%</h1>
+
+        </div>
+
+        <div class="month-card">
+
+            <h3>May</h3>
+
+            <h1>89%</h1>
+
+        </div>
+
+        <div class="month-card">
+
+            <h3>June</h3>
+
+            <h1>93%</h1>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ATTENDANCE STATUS ================= -->
+
+<section class="attendance-status">
+
+    <h2>Attendance Eligibility</h2>
+
+    <div class="status-card">
+
+        <i class="fas fa-check-circle"></i>
+
+        <h3>Eligible for Semester Examination</h3>
+
+        <p>
+
+            Your current attendance is above the minimum requirement.
+            You are eligible to appear for the university examinations.
+
+        </p>
+
+    </div>
+
+</section><!-- ================= SUBJECT WISE ATTENDANCE ================= -->
+
+<section class="subject-attendance">
+
+    <h2>Subject Wise Attendance</h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>Course Code</th>
+                <th>Subject Name</th>
+                <th>Faculty</th>
+                <th>Classes</th>
+                <th>Present</th>
+                <th>Attendance</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>CS501</td>
+                <td>Software Engineering</td>
+                <td>Dr. R. Kumar</td>
+                <td>40</td>
+                <td>38</td>
+                <td>95%</td>
+                <td><span class="present">Excellent</span></td>
+            </tr>
+
+            <tr>
+                <td>CS502</td>
+                <td>Database Management System</td>
+                <td>Mrs. Priya</td>
+                <td>38</td>
+                <td>34</td>
+                <td>89%</td>
+                <td><span class="present">Good</span></td>
+            </tr>
+
+            <tr>
+                <td>CS503</td>
+                <td>Computer Networks</td>
+                <td>Mr. Arjun</td>
+                <td>36</td>
+                <td>32</td>
+                <td>89%</td>
+                <td><span class="present">Good</span></td>
+            </tr>
+
+            <tr>
+                <td>CS504</td>
+                <td>Python Programming</td>
+                <td>Ms. Kavitha</td>
+                <td>42</td>
+                <td>40</td>
+                <td>95%</td>
+                <td><span class="present">Excellent</span></td>
+            </tr>
+
+            <tr>
+                <td>CS505</td>
+                <td>Web Technology</td>
+                <td>Mr. Suresh</td>
+                <td>35</td>
+                <td>30</td>
+                <td>86%</td>
+                <td><span class="present">Good</span></td>
+            </tr>
+
+            <tr>
+                <td>CS506</td>
+                <td>Mini Project</td>
+                <td>Dr. Meena</td>
+                <td>20</td>
+                <td>19</td>
+                <td>95%</td>
+                <td><span class="present">Excellent</span></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= THEORY & LAB ATTENDANCE ================= -->
+
+<section class="lab-attendance">
+
+    <h2>Theory & Laboratory Attendance</h2>
+
+    <div class="lab-container">
+
+        <div class="lab-card">
+
+            <i class="fas fa-book"></i>
+
+            <h3>Theory Classes</h3>
+
+            <h1>91%</h1>
+
+            <p>Attendance Percentage</p>
+
+        </div>
+
+        <div class="lab-card">
+
+            <i class="fas fa-laptop-code"></i>
+
+            <h3>Laboratory</h3>
+
+            <h1>97%</h1>
+
+            <p>Attendance Percentage</p>
+
+        </div>
+
+        <div class="lab-card">
+
+            <i class="fas fa-project-diagram"></i>
+
+            <h3>Project Work</h3>
+
+            <h1>100%</h1>
+
+            <p>Attendance Percentage</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CLASS ADVISOR ================= -->
+
+<section class="advisor">
+
+    <h2>Class Advisor</h2>
+
+    <div class="advisor-card">
+
+        <img src="https://randomuser.me/api/portraits/men/42.jpg"
+             alt="Advisor">
+
+        <div class="advisor-details">
+
+            <h3>Dr. R. Kumar</h3>
+
+            <p><strong>Department :</strong> Computer Science Engineering</p>
+
+            <p><strong>Email :</strong> rkumar@abccollege.edu.in</p>
+
+            <p><strong>Phone :</strong> +91 9876543210</p>
+
+            <p>
+
+                Contact your class advisor for attendance clarification,
+                leave approval and academic guidance.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section><!-- ================= ATTENDANCE HISTORY ================= -->
+
+<section class="attendance-history">
+
+    <h2>Attendance History</h2>
+
+    <div class="history-container">
+
+        <table>
+
+            <tr>
+                <th>Date</th>
+                <th>Day</th>
+                <th>Subject</th>
+                <th>Hour</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>10-07-2026</td>
+                <td>Monday</td>
+                <td>Software Engineering</td>
+                <td>I Hour</td>
+                <td><span class="present">Present</span></td>
+            </tr>
+
+            <tr>
+                <td>10-07-2026</td>
+                <td>Monday</td>
+                <td>Database Management</td>
+                <td>II Hour</td>
+                <td><span class="present">Present</span></td>
+            </tr>
+
+            <tr>
+                <td>11-07-2026</td>
+                <td>Tuesday</td>
+                <td>Python Programming</td>
+                <td>III Hour</td>
+                <td><span class="absent">Absent</span></td>
+            </tr>
+
+            <tr>
+                <td>12-07-2026</td>
+                <td>Wednesday</td>
+                <td>Computer Networks</td>
+                <td>IV Hour</td>
+                <td><span class="present">Present</span></td>
+            </tr>
+
+            <tr>
+                <td>13-07-2026</td>
+                <td>Thursday</td>
+                <td>Web Technology Lab</td>
+                <td>V & VI Hour</td>
+                <td><span class="present">Present</span></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= LEAVE STATUS ================= -->
+
+<section class="leave-status">
+
+    <h2>Leave Application Status</h2>
+
+    <div class="leave-container">
+
+        <div class="leave-card">
+
+            <i class="fas fa-file-alt"></i>
+
+            <h3>Total Leave Applied</h3>
+
+            <h1>05</h1>
+
+        </div>
+
+        <div class="leave-card">
+
+            <i class="fas fa-check-circle"></i>
+
+            <h3>Approved</h3>
+
+            <h1>04</h1>
+
+        </div>
+
+        <div class="leave-card">
+
+            <i class="fas fa-clock"></i>
+
+            <h3>Pending</h3>
+
+            <h1>01</h1>
+
+        </div>
+
+        <div class="leave-card">
+
+            <i class="fas fa-times-circle"></i>
+
+            <h3>Rejected</h3>
+
+            <h1>00</h1>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ATTENDANCE RULES ================= -->
+
+<section class="attendance-rules">
+
+    <h2>Attendance Rules</h2>
+
+    <div class="rules-container">
+
+        <div class="rule-box">
+
+            <i class="fas fa-check"></i>
+
+            <p>Minimum 75% attendance is mandatory for semester examinations.</p>
+
+        </div>
+
+        <div class="rule-box">
+
+            <i class="fas fa-check"></i>
+
+            <p>Medical leave should be supported with valid documents.</p>
+
+        </div>
+
+        <div class="rule-box">
+
+            <i class="fas fa-check"></i>
+
+            <p>Students should inform the class advisor before applying leave.</p>
+
+        </div>
+
+        <div class="rule-box">
+
+            <i class="fas fa-check"></i>
+
+            <p>Attendance is updated daily by the respective faculty.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ATTENDANCE NOTIFICATIONS ================= -->
+
+<section class="attendance-notification">
+
+    <h2>Attendance Notifications</h2>
+
+    <div class="notification-container">
+
+        <div class="notification-card">
+
+            <i class="fas fa-bell"></i>
+
+            <h3>Latest Update</h3>
+
+            <p>
+                Attendance has been updated up to
+                <strong>15 July 2026</strong>.
+            </p>
+
+        </div>
+
+        <div class="notification-card">
+
+            <i class="fas fa-exclamation-circle"></i>
+
+            <h3>Reminder</h3>
+
+            <p>
+                Students with attendance below 75% must meet
+                the class advisor immediately.
+            </p>
+
+        </div>
+
+        <div class="notification-card">
+
+            <i class="fas fa-calendar-check"></i>
+
+            <h3>Leave Notice</h3>
+
+            <p>
+                Apply leave through the student portal before
+                taking leave from classes.
+            </p>
+
+        </div>
+
+    </div>
+
+</section><!-- ================= PERFORMANCE SUMMARY ================= -->
+
+<section class="performance-summary">
+
+    <h2>Attendance Performance Summary</h2>
+
+    <div class="performance-container">
+
+        <div class="performance-card">
+
+            <i class="fas fa-award"></i>
+
+            <h3>Overall Performance</h3>
+
+            <h1>Excellent</h1>
+
+            <p>Your attendance is consistently above 90%.</p>
+
+        </div>
+
+        <div class="performance-card">
+
+            <i class="fas fa-star"></i>
+
+            <h3>Best Subject</h3>
+
+            <h1>Python Programming</h1>
+
+            <p>Attendance : 95%</p>
+
+        </div>
+
+        <div class="performance-card">
+
+            <i class="fas fa-chart-line"></i>
+
+            <h3>Attendance Trend</h3>
+
+            <h1>Increasing</h1>
+
+            <p>Your attendance has improved this semester.</p>
+
+        </div>
+
+        <div class="performance-card">
+
+            <i class="fas fa-user-check"></i>
+
+            <h3>Exam Eligibility</h3>
+
+            <h1>Eligible</h1>
+
+            <p>You can appear for Semester Examination.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ATTENDANCE ANALYTICS ================= -->
+
+<section class="attendance-analytics">
+
+    <h2>Attendance Analytics</h2>
+
+    <div class="analytics-container">
+
+        <div class="analytics-box">
+
+            <h3>Total Working Days</h3>
+
+            <h1>120</h1>
+
+        </div>
+
+        <div class="analytics-box">
+
+            <h3>Total Present Days</h3>
+
+            <h1>110</h1>
+
+        </div>
+
+        <div class="analytics-box">
+
+            <h3>Total Absent Days</h3>
+
+            <h1>10</h1>
+
+        </div>
+
+        <div class="analytics-box">
+
+            <h3>Attendance Percentage</h3>
+
+            <h1>92%</h1>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STUDENT FEEDBACK ================= -->
+
+<section class="attendance-feedback">
+
+    <h2>Attendance Feedback</h2>
+
+    <form action="/attendancefeedback" method="POST">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter Your Name"
+            required>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Enter Your Email"
+            required>
+
+        <textarea
+            name="feedback"
+            rows="6"
+            placeholder="Share your feedback regarding attendance..."
+            required></textarea>
+
+        <button type="submit">
+
+            <i class="fas fa-paper-plane"></i>
+
+            Submit Feedback
+
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h2>ABC College of Engineering</h2>
+
+            <p>
+                Knowledge | Innovation | Excellence
+            </p>
+
+            <p>
+                Empowering students through quality education,
+                discipline and innovation.
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="/userhome">Home</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/attendance">Attendance</a></li>
+                <li><a href="/marks">Results</a></li>
+                <li><a href="/courses">Contact</a></li>
+              <li><a href="/notice">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>Contact</h3>
+
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                Chennai, Tamil Nadu
+            </p>
+
+            <p>
+                <i class="fas fa-phone"></i>
+                +91 9876543210
+            </p>
+
+            <p>
+                <i class="fas fa-envelope"></i>
+                info@abccollege.edu.in
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>Follow Us</h3>
+
+            <div class="social">
+
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="copyright">
+
+        <p>
+
+            © 2026 ABC College of Engineering |
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

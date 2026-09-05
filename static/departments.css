@@ -1,0 +1,1447 @@
+/* ================= GLOBAL STYLE ================= */
+
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',Arial,sans-serif;
+
+}
+
+
+body{
+
+    background:#f8f9fc;
+    color:#333;
+    line-height:1.6;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+
+}
+
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+
+h1{
+
+    text-align:center;
+    color:#0b2c5f;
+    font-size:38px;
+    margin-bottom:40px;
+
+}
+
+
+
+.btn{
+
+    display:inline-block;
+    background:#0b2c5f;
+    color:white;
+    padding:12px 30px;
+    border-radius:30px;
+    margin-top:15px;
+    transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+    background:#f39c12;
+
+}
+
+
+
+
+
+
+/* ================= TOP BAR ================= */
+
+
+.topbar{
+
+
+    background:#0b2c5f;
+    color:white;
+    padding:12px 60px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:15px;
+
+
+}
+
+
+
+.topbar i{
+
+    color:#f39c12;
+    margin-right:8px;
+
+}
+
+
+
+.topbar a{
+
+    color:white;
+    margin-left:15px;
+    transition:.3s;
+
+}
+
+
+
+.topbar a:hover{
+
+    color:#f39c12;
+
+}
+
+
+
+
+
+
+/* ================= HEADER ================= */
+
+
+header{
+
+
+    background:white;
+    padding:20px 60px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+
+}
+
+
+
+.logo{
+
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+
+}
+
+
+
+.logo img{
+
+
+    width:75px;
+    height:75px;
+
+
+}
+
+
+
+.logo h1{
+
+
+    font-size:28px;
+    text-align:left;
+    margin:0;
+
+
+}
+
+
+
+.logo p{
+
+
+    color:#777;
+
+
+}
+
+
+
+
+
+/* ================= NAVIGATION ================= */
+
+
+nav ul{
+
+
+    display:flex;
+    list-style:none;
+    gap:25px;
+
+
+}
+
+
+
+nav ul li a{
+
+
+    font-weight:600;
+    padding:8px 15px;
+    transition:.3s;
+
+
+}
+
+
+
+nav ul li a:hover,
+nav ul li a.active{
+
+
+    background:#0b2c5f;
+    color:white;
+    border-radius:20px;
+
+
+}
+
+
+
+
+
+
+
+/* ================= DEPARTMENT HERO ================= */
+
+
+.dept-hero{
+
+
+    height:500px;
+
+    background-image:url("images/banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+
+
+}
+
+
+
+.hero-overlay{
+
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.55);
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+
+}
+
+
+
+.hero-overlay h1{
+
+
+    color:white;
+    font-size:50px;
+    margin-bottom:20px;
+
+
+}
+
+
+
+.hero-overlay p{
+
+
+    font-size:22px;
+    width:70%;
+
+
+}
+
+
+
+
+
+
+
+/* ================= INTRO SECTION ================= */
+
+
+.dept-intro{
+
+
+    padding:70px 100px;
+    text-align:center;
+    background:white;
+
+
+}
+
+
+
+.dept-intro p{
+
+
+    max-width:900px;
+    margin:auto;
+
+    font-size:18px;
+    color:#555;
+
+
+}
+
+
+
+
+
+
+
+/* ================= DEPARTMENT CARDS ================= */
+
+
+.departments{
+
+
+    padding:80px;
+
+
+}
+
+
+
+.department-container{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+
+}
+
+
+
+.department-card{
+
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+    transition:.3s;
+
+
+}
+
+
+
+.department-card:hover{
+
+
+    transform:translateY(-10px);
+
+
+}
+
+
+
+.department-card img{
+
+
+    height:250px;
+
+    object-fit:cover;
+
+
+}
+
+
+
+.card-content{
+
+
+    padding:25px;
+
+
+}
+
+
+
+.card-content h2{
+
+
+    color:#0b2c5f;
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+
+}
+
+
+
+.card-content p{
+
+
+    color:#666;
+
+    font-size:16px;
+
+
+}
+/* ================= DEPARTMENT HIGHLIGHTS ================= */
+
+
+.dept-details{
+
+    padding:80px;
+    background:#f1f5fb;
+
+}
+
+
+
+.detail-container{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+
+}
+
+
+
+.detail-box{
+
+    background:white;
+    padding:35px 25px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+
+}
+
+
+
+.detail-box:hover{
+
+    transform:translateY(-10px);
+    background:#0b2c5f;
+    color:white;
+
+}
+
+
+
+.detail-box i{
+
+    font-size:45px;
+    color:#f39c12;
+    margin-bottom:20px;
+
+}
+
+
+
+.detail-box h2{
+
+    color:#0b2c5f;
+    margin-bottom:15px;
+
+}
+
+
+
+.detail-box:hover h2{
+
+    color:white;
+
+}
+
+
+
+.detail-box p{
+
+    color:#666;
+
+}
+
+
+
+.detail-box:hover p{
+
+    color:white;
+
+}
+
+
+
+
+
+
+
+/* ================= HOD SECTION ================= */
+
+
+.hod-section{
+
+    display:flex;
+    align-items:center;
+    gap:50px;
+    padding:80px;
+    background:white;
+
+}
+
+
+
+.hod-image{
+
+    flex:1;
+
+}
+
+
+
+.hod-image img{
+
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:20px;
+
+}
+
+
+
+.hod-content{
+
+    flex:1;
+
+}
+
+
+
+.hod-content h1{
+
+    text-align:left;
+
+}
+
+
+
+.hod-content p{
+
+    color:#555;
+    font-size:17px;
+    margin-bottom:15px;
+
+}
+
+
+
+.hod-content h3{
+
+    color:#0b2c5f;
+    margin-top:20px;
+
+}
+
+
+
+
+
+
+
+/* ================= LABORATORIES ================= */
+
+
+.labs{
+
+    padding:80px;
+    background:#f1f5fb;
+
+}
+
+
+
+.lab-container{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+
+}
+
+
+
+.lab-card{
+
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+
+}
+
+
+
+.lab-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.lab-card img{
+
+    height:250px;
+    object-fit:cover;
+
+}
+
+
+
+.lab-card h2{
+
+    color:#0b2c5f;
+    padding:20px 20px 10px;
+
+}
+
+
+
+.lab-card p{
+
+    padding:0 20px 25px;
+    color:#666;
+
+}
+
+
+
+
+
+
+
+/* ================= DEPARTMENT ACHIEVEMENTS ================= */
+
+
+.dept-achievements{
+
+    padding:80px;
+    background:white;
+
+}
+
+
+
+.achievement-container{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+
+}
+
+
+
+.achievement-box{
+
+    background:#f8f9fc;
+    padding:35px 20px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+
+}
+
+
+
+.achievement-box:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.achievement-box i{
+
+    font-size:45px;
+    color:#f39c12;
+    margin-bottom:20px;
+
+}
+
+
+
+.achievement-box h2{
+
+    color:#0b2c5f;
+    font-size:22px;
+    margin-bottom:15px;
+
+}
+
+
+
+.achievement-box p{
+
+    color:#666;
+
+}
+
+
+
+
+
+
+
+/* ================= DEPARTMENT PLACEMENT ================= */
+
+
+.dept-placement{
+
+    padding:80px;
+    background:#f1f5fb;
+    text-align:center;
+
+}
+
+
+
+.placement-container{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+
+}
+
+
+
+.placement-card{
+
+    background:white;
+    padding:40px 20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+
+}
+
+
+
+.placement-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.placement-card h2{
+
+    color:#0b2c5f;
+    font-size:40px;
+
+}
+
+
+
+.placement-card p{
+
+    color:#666;
+    font-size:18px;
+
+}/* ================= FACULTY SECTION ================= */
+
+
+.faculty{
+
+    padding:80px;
+    background:white;
+
+}
+
+
+
+.faculty-container{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+
+}
+
+
+
+.faculty-card{
+
+    background:#f8f9fc;
+    padding-bottom:25px;
+    text-align:center;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+
+}
+
+
+
+.faculty-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.faculty-card img{
+
+    height:280px;
+    object-fit:cover;
+
+}
+
+
+
+.faculty-card h2{
+
+    color:#0b2c5f;
+    margin-top:20px;
+
+}
+
+
+
+.faculty-card h4{
+
+    color:#f39c12;
+    margin:10px 0;
+
+}
+
+
+
+.faculty-card p{
+
+    color:#666;
+    padding:0 20px;
+
+}
+
+
+
+
+
+
+
+/* ================= STUDENT PROJECTS ================= */
+
+
+.projects{
+
+    padding:80px;
+    background:#f1f5fb;
+
+}
+
+
+
+.project-container{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+
+}
+
+
+
+.project-card{
+
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+
+}
+
+
+
+.project-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.project-card img{
+
+    height:250px;
+    object-fit:cover;
+
+}
+
+
+
+.project-card h2{
+
+    color:#0b2c5f;
+    padding:20px 20px 10px;
+
+}
+
+
+
+.project-card p{
+
+    color:#666;
+    padding:0 20px 25px;
+
+}
+
+
+
+
+
+
+
+/* ================= DEPARTMENT GALLERY ================= */
+
+
+.dept-gallery{
+
+    padding:80px;
+    background:white;
+
+}
+
+
+
+.gallery-container{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+
+}
+
+
+
+.gallery-box{
+
+    overflow:hidden;
+    border-radius:15px;
+
+}
+
+
+
+.gallery-box img{
+
+    height:280px;
+    object-fit:cover;
+    transition:.5s;
+
+}
+
+
+
+.gallery-box img:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+
+
+
+
+/* ================= DEPARTMENT FAQ ================= */
+
+
+.department-faq{
+
+    padding:80px;
+    background:#f1f5fb;
+
+}
+
+
+
+.faq-container{
+
+    max-width:900px;
+    margin:auto;
+
+}
+
+
+
+.faq-item{
+
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+
+
+.faq-item h2{
+
+    font-size:22px;
+    color:#0b2c5f;
+    margin-bottom:15px;
+
+}
+
+
+
+.faq-item i{
+
+    color:#f39c12;
+    margin-right:10px;
+
+}
+
+
+
+.faq-item p{
+
+    color:#666;
+
+}
+
+
+
+
+
+
+
+/* ================= CONTACT BANNER ================= */
+
+
+.dept-banner{
+
+    height:350px;
+
+    background-image:url("images/banner.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    position:relative;
+
+}
+
+
+
+.dept-banner::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(11,44,95,0.75);
+
+}
+
+
+
+.banner-content{
+
+    position:relative;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+
+.banner-content h1{
+
+    color:white;
+
+    font-size:42px;
+
+}
+
+
+
+.banner-content p{
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+
+
+/* ================= FOOTER ================= */
+
+
+footer{
+
+    background:#0b2c5f;
+
+    color:white;
+
+}
+
+
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    padding:60px 80px;
+
+}
+
+
+
+.footer-box h2{
+
+    color:#f39c12;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.footer-box p{
+
+    color:#ddd;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.footer-box ul{
+
+    list-style:none;
+
+}
+
+
+
+.footer-box li{
+
+    margin-bottom:12px;
+
+}
+
+
+
+.footer-box a{
+
+    color:white;
+
+}
+
+
+
+.footer-box a:hover{
+
+    color:#f39c12;
+
+}
+
+
+
+.social{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+
+.social a{
+
+    width:40px;
+
+    height:40px;
+
+    background:white;
+
+    color:#0b2c5f;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.social a:hover{
+
+    background:#f39c12;
+
+    color:white;
+
+}
+
+
+
+.copyright{
+
+    text-align:center;
+
+    padding:20px;
+
+    background:#082047;
+
+}
+
+
+
+
+
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+
+@media(max-width:1100px){
+
+
+.department-container,
+.detail-container,
+.lab-container,
+.achievement-container,
+.placement-container,
+.faculty-container,
+.project-container,
+.gallery-container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.footer-container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:700px){
+
+
+.topbar{
+
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+
+}
+
+
+
+header{
+
+    flex-direction:column;
+    padding:20px;
+
+}
+
+
+
+nav ul{
+
+    flex-direction:column;
+    text-align:center;
+
+}
+
+
+
+.dept-hero{
+
+    height:350px;
+
+}
+
+
+
+.hero-overlay h1{
+
+    font-size:32px;
+
+}
+
+
+
+.hero-overlay p{
+
+    width:90%;
+    font-size:16px;
+
+}
+
+
+
+.departments,
+.dept-details,
+.hod-section,
+.labs,
+.dept-achievements,
+.dept-placement,
+.faculty,
+.projects,
+.dept-gallery,
+.department-faq{
+
+    padding:40px 20px;
+
+}
+
+
+
+.hod-section{
+
+    flex-direction:column;
+
+}
+
+
+
+.department-container,
+.detail-container,
+.lab-container,
+.achievement-container,
+.placement-container,
+.faculty-container,
+.project-container,
+.gallery-container,
+.footer-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.banner-content h1{
+
+    font-size:28px;
+
+}
+
+
+}

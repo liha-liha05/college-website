@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="login-box">
+
+        <img src="{{ url_for('static', filename='images/admin.png') }}" class="logo">
+
+        <h2>ADMIN LOGIN</h2>
+
+        <form action="/adminlogin" method="POST">
+
+            <div class="input-box">
+    <label>Username</label>
+    <input type="text" name="username" value="admin" required>
+</div>
+
+<div class="input-box">
+    <label>Password</label>
+    <input type="password" name="password" value="admin123" required>
+</div>
+            <div class="demo">
+    <h4>Demo Credentials</h4>
+    <p><strong>Username:</strong> admin</p>
+    <p><strong>Password:</strong> admin123</p>
+</div>
+
+            <button type="submit">LOGIN</button>
+
+        </form>
+
+        <a href="/">← Back to Home</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

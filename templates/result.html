@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Results | ABC College</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+
+        <h1>ABC College of Engineering</h1>
+
+        <p>Knowledge | Innovation | Excellence</p>
+
+    </div>
+
+    <div class="student-profile">
+
+        <i class="fas fa-user-circle"></i>
+
+        <span>Welcome {{ session['username'] }}</span>
+
+        <a href="/slogout" class="logout-btn">Logout</a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<ul>
+
+    <li><a href="/userhome">Home</a></li>
+
+    <li><a href="/profile">Profile</a></li>
+
+    <li><a href="/attendance">Attendance</a></li>
+
+    <li><a href="/result" class="active">Result</a></li>
+    <li><a href="/courses2" class="active">Courses</a></li>
+
+    <li><a href="/contact2">Contact</a></li>
+     <li><a href="/notices">notice</a></li>
+
+</ul>
+
+</nav>
+
+
+
+<!-- ================= RESULT BANNER ================= -->
+
+<section class="result-banner">
+
+    <div class="banner-overlay">
+
+        <h1>Semester Examination Results</h1>
+
+        <p>
+
+            View your semester marks, grade, CGPA and academic performance.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STUDENT DETAILS ================= -->
+
+<section class="student-info">
+
+<h2>Student Information</h2>
+
+<div class="info-container">
+
+    <div class="info-card">
+
+        <i class="fas fa-id-card"></i>
+
+        <h3>Register Number</h3>
+
+        <p>2026CSE001</p>
+
+    </div>
+
+    <div class="info-card">
+
+        <i class="fas fa-user"></i>
+
+        <h3>Student Name</h3>
+
+        <p>{{ session['username'] }}</p>
+
+    </div>
+
+    <div class="info-card">
+
+        <i class="fas fa-building"></i>
+
+        <h3>Department</h3>
+
+        <p>Computer Science Engineering</p>
+
+    </div>
+
+    <div class="info-card">
+
+        <i class="fas fa-calendar-alt"></i>
+
+        <h3>Semester</h3>
+
+        <p>V Semester</p>
+
+    </div>
+
+</div>
+
+</section><!-- ================= RESULT SUMMARY ================= -->
+
+<section class="result-summary">
+
+    <h2>Semester Result Summary</h2>
+
+    <div class="summary-container">
+
+        <div class="summary-card">
+
+            <i class="fas fa-book-open"></i>
+
+            <h3>Total Subjects</h3>
+
+            <h1>6</h1>
+
+            <p>Subjects Appeared</p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <i class="fas fa-check-circle"></i>
+
+            <h3>Subjects Passed</h3>
+
+            <h1>6</h1>
+
+            <p>100% Pass</p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <i class="fas fa-star"></i>
+
+            <h3>CGPA</h3>
+
+            <h1>8.92</h1>
+
+            <p>Current Semester</p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <i class="fas fa-award"></i>
+
+            <h3>Grade</h3>
+
+            <h1>A+</h1>
+
+            <p>Excellent Performance</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MARK SUMMARY ================= -->
+
+<section class="mark-summary">
+
+    <h2>Overall Mark Statistics</h2>
+
+    <div class="mark-container">
+
+        <div class="mark-box">
+
+            <i class="fas fa-percent"></i>
+
+            <h3>Percentage</h3>
+
+            <h1>89%</h1>
+
+        </div>
+
+        <div class="mark-box">
+
+            <i class="fas fa-medal"></i>
+
+            <h3>Class</h3>
+
+            <h1>First Class with Distinction</h1>
+
+        </div>
+
+        <div class="mark-box">
+
+            <i class="fas fa-trophy"></i>
+
+            <h3>Rank</h3>
+
+            <h1>12</h1>
+
+        </div>
+
+        <div class="mark-box">
+
+            <i class="fas fa-user-check"></i>
+
+            <h3>Result Status</h3>
+
+            <h1>PASS</h1>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CGPA PERFORMANCE ================= -->
+
+<section class="cgpa-performance">
+
+    <h2>CGPA Performance</h2>
+
+    <div class="cgpa-card">
+
+        <div class="cgpa-circle">
+
+            <h1>8.92</h1>
+
+            <p>CGPA</p>
+
+        </div>
+
+        <div class="cgpa-details">
+
+            <h3>Performance Analysis</h3>
+
+            <p>
+
+                Excellent academic performance throughout the semester.
+                Maintain the same consistency to achieve a higher CGPA
+                in upcoming semesters.
+
+            </p>
+
+            <ul>
+
+                <li>Overall Grade : <strong>A+</strong></li>
+
+                <li>Pass Percentage : <strong>100%</strong></li>
+
+                <li>Academic Standing : <strong>Excellent</strong></li>
+
+                <li>Eligible for Scholarship : <strong>Yes</strong></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section><!-- ================= SUBJECT WISE RESULTS ================= -->
+
+<section class="subject-results">
+
+    <h2>Subject Wise Results</h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>S.No</th>
+                    <th>Course Code</th>
+                    <th>Subject Name</th>
+                    <th>Internal</th>
+                    <th>External</th>
+                    <th>Total</th>
+                    <th>Grade</th>
+                    <th>Result</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>1</td>
+                    <td>CS501</td>
+                    <td>Software Engineering</td>
+                    <td>24</td>
+                    <td>63</td>
+                    <td>87</td>
+                    <td>A</td>
+                    <td><span class="pass">PASS</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>2</td>
+                    <td>CS502</td>
+                    <td>Database Management System</td>
+                    <td>25</td>
+                    <td>66</td>
+                    <td>91</td>
+                    <td>A+</td>
+                    <td><span class="pass">PASS</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>3</td>
+                    <td>CS503</td>
+                    <td>Computer Networks</td>
+                    <td>23</td>
+                    <td>60</td>
+                    <td>83</td>
+                    <td>B+</td>
+                    <td><span class="pass">PASS</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>4</td>
+                    <td>CS504</td>
+                    <td>Python Programming</td>
+                    <td>25</td>
+                    <td>70</td>
+                    <td>95</td>
+                    <td>O</td>
+                    <td><span class="pass">PASS</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>5</td>
+                    <td>CS505</td>
+                    <td>Web Technology</td>
+                    <td>24</td>
+                    <td>64</td>
+                    <td>88</td>
+                    <td>A</td>
+                    <td><span class="pass">PASS</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>6</td>
+                    <td>CS506</td>
+                    <td>Mini Project</td>
+                    <td>25</td>
+                    <td>72</td>
+                    <td>97</td>
+                    <td>O</td>
+                    <td><span class="pass">PASS</span></td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GRADE DETAILS ================= -->
+
+<section class="grade-details">
+
+    <h2>Grade Scale</h2>
+
+    <div class="grade-container">
+
+        <div class="grade-card">
+            <h3>O</h3>
+            <p>Outstanding</p>
+            <span>90 - 100 Marks</span>
+        </div>
+
+        <div class="grade-card">
+            <h3>A+</h3>
+            <p>Excellent</p>
+            <span>80 - 89 Marks</span>
+        </div>
+
+        <div class="grade-card">
+            <h3>A</h3>
+            <p>Very Good</p>
+            <span>70 - 79 Marks</span>
+        </div>
+
+        <div class="grade-card">
+            <h3>B+</h3>
+            <p>Good</p>
+            <span>60 - 69 Marks</span>
+        </div>
+
+        <div class="grade-card">
+            <h3>B</h3>
+            <p>Average</p>
+            <span>50 - 59 Marks</span>
+        </div>
+
+        <div class="grade-card">
+            <h3>RA</h3>
+            <p>Re-Appear</p>
+            <span>Below 50 Marks</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= RESULT NOTE ================= -->
+
+<section class="result-note">
+
+    <div class="note-box">
+
+        <i class="fas fa-info-circle"></i>
+
+        <h3>Important Note</h3>
+
+        <p>
+
+            The marks displayed above are provisional results.
+            Original mark sheets will be issued by the Examination
+            Cell after official verification.
+
+        </p>
+
+    </div>
+
+</section><!-- ================= SEMESTER GPA HISTORY ================= -->
+
+<section class="semester-history">
+
+    <h2>Semester GPA History</h2>
+
+    <div class="history-container">
+
+        <table>
+
+            <tr>
+
+                <th>Semester</th>
+                <th>Credits</th>
+                <th>SGPA</th>
+                <th>CGPA</th>
+                <th>Status</th>
+
+            </tr>
+
+            <tr>
+
+                <td>I Semester</td>
+                <td>22</td>
+                <td>8.35</td>
+                <td>8.35</td>
+                <td><span class="pass">PASS</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>II Semester</td>
+                <td>23</td>
+                <td>8.58</td>
+                <td>8.46</td>
+                <td><span class="pass">PASS</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>III Semester</td>
+                <td>24</td>
+                <td>8.74</td>
+                <td>8.55</td>
+                <td><span class="pass">PASS</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>IV Semester</td>
+                <td>24</td>
+                <td>8.88</td>
+                <td>8.63</td>
+                <td><span class="pass">PASS</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>V Semester</td>
+                <td>23</td>
+                <td>8.92</td>
+                <td>8.72</td>
+                <td><span class="pass">PASS</span></td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PERFORMANCE ANALYSIS ================= -->
+
+<section class="performance-analysis">
+
+    <h2>Academic Performance</h2>
+
+    <div class="analysis-container">
+
+        <div class="analysis-card">
+
+            <i class="fas fa-chart-line"></i>
+
+            <h3>Overall Performance</h3>
+
+            <h1>Excellent</h1>
+
+            <p>
+                Continuous improvement in every semester
+                with an increasing CGPA.
+            </p>
+
+        </div>
+
+        <div class="analysis-card">
+
+            <i class="fas fa-award"></i>
+
+            <h3>Highest Grade</h3>
+
+            <h1>O Grade</h1>
+
+            <p>
+                Achieved Outstanding grade in
+                Python Programming and Mini Project.
+            </p>
+
+        </div>
+
+        <div class="analysis-card">
+
+            <i class="fas fa-medal"></i>
+
+            <h3>Class Standing</h3>
+
+            <h1>Top 15</h1>
+
+            <p>
+                Ranked among the top performers
+                in the department.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TOP SUBJECTS ================= -->
+
+<section class="top-subjects">
+
+    <h2>Top Performing Subjects</h2>
+
+    <div class="subject-container">
+
+        <div class="subject-card">
+
+            <i class="fas fa-laptop-code"></i>
+
+            <h3>Python Programming</h3>
+
+            <h1>95</h1>
+
+            <p>Outstanding Performance</p>
+
+        </div>
+
+        <div class="subject-card">
+
+            <i class="fas fa-code"></i>
+
+            <h3>Mini Project</h3>
+
+            <h1>97</h1>
+
+            <p>Excellent Innovation</p>
+
+        </div>
+
+        <div class="subject-card">
+
+            <i class="fas fa-database"></i>
+
+            <h3>Database Management</h3>
+
+            <h1>91</h1>
+
+            <p>Excellent Performance</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= RESULT STATISTICS ================= -->
+
+<section class="result-statistics">
+
+    <h2>Result Statistics</h2>
+
+    <div class="statistics-container">
+
+        <div class="statistics-card">
+
+            <i class="fas fa-book"></i>
+
+            <h3>Total Subjects</h3>
+
+            <h1>6</h1>
+
+        </div>
+
+        <div class="statistics-card">
+
+            <i class="fas fa-check-circle"></i>
+
+            <h3>Subjects Passed</h3>
+
+            <h1>6</h1>
+
+        </div>
+
+        <div class="statistics-card">
+
+            <i class="fas fa-star"></i>
+
+            <h3>Average Mark</h3>
+
+            <h1>90</h1>
+
+        </div>
+
+        <div class="statistics-card">
+
+            <i class="fas fa-trophy"></i>
+
+            <h3>CGPA</h3>
+
+            <h1>8.92</h1>
+
+        </div>
+
+    </div>
+
+</section><!-- ================= ACHIEVEMENTS ================= -->
+
+<section class="achievements">
+
+    <h2>Academic Achievements</h2>
+
+    <div class="achievement-container">
+
+        <div class="achievement-card">
+
+            <i class="fas fa-trophy"></i>
+
+            <h3>Department Topper</h3>
+
+            <p>
+                Secured Top 15 rank in Computer Science Engineering
+                with outstanding academic performance.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <i class="fas fa-medal"></i>
+
+            <h3>Academic Excellence</h3>
+
+            <p>
+                Maintained CGPA above 8.5 in every semester with
+                excellent consistency.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <i class="fas fa-certificate"></i>
+
+            <h3>Certification</h3>
+
+            <p>
+                Successfully completed Python, Web Development
+                and Database certification courses.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <i class="fas fa-user-graduate"></i>
+
+            <h3>Placement Ready</h3>
+
+            <p>
+                Eligible for campus placement with excellent
+                academic and technical performance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DOWNLOAD MARKSHEET ================= -->
+
+<section class="download-section">
+
+    <h2>Download Semester Marksheet</h2>
+
+    <p>
+
+        Click the button below to download your provisional
+        semester marksheet.
+
+    </p>
+
+    <a href="/downloadmarksheet" class="download-btn">
+
+        <i class="fas fa-download"></i>
+
+        Download Marksheet
+
+    </a>
+
+</section>
+
+
+
+<!-- ================= FEEDBACK ================= -->
+
+<section class="result-feedback">
+
+    <h2>Student Feedback</h2>
+
+    <form action="/resultfeedback" method="POST">
+
+        <input
+        type="text"
+        name="name"
+        placeholder="Enter Your Name"
+        required>
+
+        <input
+        type="email"
+        name="email"
+        placeholder="Enter Your Email"
+        required>
+
+        <textarea
+        name="feedback"
+        rows="6"
+        placeholder="Enter your feedback..."
+        required></textarea>
+
+        <button type="submit">
+
+            <i class="fas fa-paper-plane"></i>
+
+            Submit Feedback
+
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h2>ABC College of Engineering</h2>
+
+            <p>
+
+                Knowledge | Innovation | Excellence
+
+            </p>
+
+            <p>
+
+                Empowering students through quality education,
+                innovation and career development.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="/userhome">Home</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/attendance">Attendance</a></li>
+                <li><a href="/results">Results</a></li>
+                <li><a href="/contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>Contact</h3>
+
+            <p>
+
+                <i class="fas fa-map-marker-alt"></i>
+
+                Chennai, Tamil Nadu
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +91 9876543210
+
+            </p>
+
+            <p>
+
+                <i class="fas fa-envelope"></i>
+
+                info@abccollege.edu.in
+
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>Follow Us</h3>
+
+            <div class="social">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="copyright">
+
+        <p>
+
+            © 2026 ABC College of Engineering |
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

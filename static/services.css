@@ -1,0 +1,1454 @@
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+    background:#f5f7fb;
+    color:#333;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+
+
+
+/* ================= TOP BAR ================= */
+
+
+.topbar{
+
+    background:#071d36;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 8%;
+    font-size:15px;
+
+}
+
+
+.topbar i{
+
+    color:#f5b400;
+    margin-right:8px;
+
+}
+
+
+.topbar a{
+
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+
+.topbar a:hover{
+
+    color:#f5b400;
+
+}
+
+
+
+
+
+
+/* ================= HEADER ================= */
+
+
+header{
+
+    background:white;
+    padding:20px 8%;
+
+}
+
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+}
+
+
+.logo img{
+
+    width:80px;
+    height:80px;
+
+}
+
+
+.logo h1{
+
+    color:#071d36;
+    font-size:32px;
+
+}
+
+
+.logo p{
+
+    color:#f5b400;
+    font-size:16px;
+
+}
+
+
+
+
+
+
+
+/* ================= NAVIGATION ================= */
+
+
+nav{
+
+    background:#071d36;
+    padding:15px 8%;
+
+}
+
+
+nav ul{
+
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:35px;
+
+}
+
+
+nav ul li a{
+
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+
+}
+
+
+nav ul li a:hover,
+nav ul li .active{
+
+    color:#f5b400;
+
+}
+
+
+
+
+
+
+
+/* ================= HERO ================= */
+
+
+.service-hero{
+
+    height:450px;
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+
+.hero-overlay{
+
+    background:rgba(0,0,0,.55);
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+
+}
+
+
+.hero-overlay h1{
+
+    font-size:50px;
+    margin-bottom:15px;
+
+}
+
+
+.hero-overlay p{
+
+    font-size:20px;
+
+}
+
+
+
+
+
+
+
+/* ================= INTRO ================= */
+
+
+.service-intro{
+
+    text-align:center;
+    padding:60px 10%;
+
+}
+
+
+.service-intro h1{
+
+    font-size:35px;
+    color:#071d36;
+    margin-bottom:20px;
+
+}
+
+
+.service-intro p{
+
+    font-size:18px;
+    line-height:1.8;
+
+}
+
+
+
+
+
+
+
+/* ================= SERVICE CARDS ================= */
+
+
+.services,
+.services-more{
+
+    padding:50px 8%;
+
+}
+
+
+
+.service-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.service-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.service-card img{
+
+    width:100%;
+    height:220px;
+    object-fit:cover;
+
+}
+
+
+
+.service-card div{
+
+    padding:25px;
+
+}
+
+
+
+.service-card i{
+
+    font-size:35px;
+    color:#f5b400;
+
+}
+
+
+
+.service-card h2{
+
+    color:#071d36;
+    margin:15px 0;
+
+}
+
+
+
+.service-card p{
+
+    line-height:1.7;
+    color:#555;
+
+}
+/* ================= SERVICE HIGHLIGHTS ================= */
+
+
+.service-highlights{
+
+    padding:60px 8%;
+    text-align:center;
+
+}
+
+
+
+.service-highlights h1{
+
+    font-size:35px;
+    color:#071d36;
+    margin-bottom:40px;
+
+}
+
+
+
+.highlight-container{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+
+}
+
+
+
+.highlight-box{
+
+    background:white;
+    padding:35px 20px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+
+
+.highlight-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.highlight-box i{
+
+    font-size:40px;
+    color:#f5b400;
+    margin-bottom:20px;
+
+}
+
+
+
+.highlight-box h2{
+
+    color:#071d36;
+    margin-bottom:15px;
+
+}
+
+
+
+.highlight-box p{
+
+    color:#555;
+    line-height:1.6;
+
+}
+
+
+
+
+
+
+
+
+/* ================= SERVICE STATISTICS ================= */
+
+
+.service-stats{
+
+    background:#071d36;
+
+    padding:50px 8%;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    text-align:center;
+
+}
+
+
+
+.stats-box{
+
+    color:white;
+
+}
+
+
+
+.stats-box h1{
+
+    font-size:45px;
+    color:#f5b400;
+
+}
+
+
+
+.stats-box p{
+
+    font-size:18px;
+
+}
+
+
+
+
+
+
+
+/* ================= STUDENT SUPPORT ================= */
+
+
+.student-support{
+
+    padding:60px 8%;
+    text-align:center;
+
+}
+
+
+
+.student-support h1{
+
+    color:#071d36;
+    font-size:35px;
+    margin-bottom:40px;
+
+}
+
+
+
+.support-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.support-card{
+
+    background:white;
+
+    padding:30px 20px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+}
+
+
+
+.support-card i{
+
+    font-size:40px;
+
+    color:#f5b400;
+
+}
+
+
+
+.support-card h2{
+
+    color:#071d36;
+
+    margin:15px 0;
+
+}
+
+
+
+.support-card p{
+
+    line-height:1.6;
+
+    color:#555;
+
+}
+
+
+
+
+
+
+
+/* ================= TRAINING ================= */
+
+
+.training{
+
+    padding:60px 8%;
+    text-align:center;
+
+}
+
+
+
+.training h1{
+
+    color:#071d36;
+    font-size:35px;
+    margin-bottom:40px;
+
+}
+
+
+
+.training-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.training-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+
+
+.training-card img{
+
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+
+
+.training-card h2{
+
+    color:#071d36;
+
+    margin:20px 0 10px;
+
+}
+
+
+
+.training-card p{
+
+    padding:0 20px 25px;
+
+    line-height:1.6;
+
+    color:#555;
+
+}
+
+
+
+
+
+
+
+/* ================= ONLINE LEARNING ================= */
+
+
+.online-learning{
+
+    padding:70px 8%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+    background:white;
+
+}
+
+
+
+.online-image{
+
+    width:50%;
+
+}
+
+
+
+.online-image img{
+
+    width:100%;
+
+    border-radius:15px;
+
+}
+
+
+
+.online-content{
+
+    width:50%;
+
+}
+
+
+
+.online-content h1{
+
+    color:#071d36;
+
+    font-size:35px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.online-content p{
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.online-content ul{
+
+    list-style:none;
+
+}
+
+
+
+.online-content li{
+
+    margin:15px 0;
+
+    font-size:17px;
+
+}
+
+
+
+.online-content li i{
+
+    color:#f5b400;
+
+    margin-right:10px;
+
+}
+
+
+
+.service-btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:12px 30px;
+
+    background:#071d36;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+}
+
+
+
+.service-btn:hover{
+
+    background:#f5b400;
+
+}/* ================= SERVICES DETAILS SECTION ================= */
+
+.service-details{
+    padding:80px 8%;
+    background:#f8f9fa;
+}
+
+
+.service-details h2{
+    text-align:center;
+    font-size:36px;
+    color:#0b3d91;
+    margin-bottom:50px;
+}
+
+
+.service-detail-container{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+
+}
+
+
+.service-detail-card{
+
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.4s;
+
+}
+
+
+.service-detail-card:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+}
+
+
+.service-detail-card i{
+
+    font-size:45px;
+    color:#0b3d91;
+    margin-bottom:20px;
+
+}
+
+
+.service-detail-card h3{
+
+    font-size:22px;
+    color:#222;
+    margin-bottom:15px;
+
+}
+
+
+.service-detail-card p{
+
+    font-size:16px;
+    line-height:1.7;
+    color:#555;
+
+}
+
+
+
+/* ================= STUDENT SUPPORT ================= */
+
+
+.student-support{
+
+    padding:80px 8%;
+    background:white;
+
+}
+
+
+.student-support h2{
+
+    text-align:center;
+    font-size:36px;
+    color:#0b3d91;
+    margin-bottom:40px;
+
+}
+
+
+.support-container{
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+
+}
+
+
+.support-card{
+
+    width:280px;
+    background:#f1f5ff;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    transition:.3s;
+
+}
+
+
+.support-card:hover{
+
+    background:#0b3d91;
+    color:white;
+
+}
+
+
+.support-card i{
+
+    font-size:40px;
+    margin-bottom:20px;
+    color:#0b3d91;
+
+}
+
+
+.support-card:hover i{
+
+    color:white;
+
+}
+
+
+.support-card h3{
+
+    font-size:22px;
+    margin-bottom:15px;
+
+}
+
+
+.support-card p{
+
+    line-height:1.6;
+
+}
+
+
+
+/* ================= SERVICE BANNER ================= */
+
+
+.service-banner{
+
+    height:350px;
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)
+    ),
+    url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655")
+    center/cover;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+
+}
+
+
+.service-banner h1{
+
+    font-size:45px;
+    margin-bottom:20px;
+
+}
+
+
+.service-banner p{
+
+    font-size:20px;
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:992px){
+
+
+.service-detail-container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.service-detail-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.service-banner h1{
+
+    font-size:32px;
+
+}
+
+
+.service-banner p{
+
+    font-size:16px;
+
+}
+
+
+}
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#0b1d3a;
+    color:white;
+    padding:60px 8% 20px;
+    margin-top:50px;
+
+}
+
+
+/* Footer Main Container */
+
+.footer-container{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+
+}
+
+
+
+/* Footer Box */
+
+.footer-box h2{
+
+    font-size:28px;
+    margin-bottom:15px;
+    color:#ffffff;
+
+}
+
+
+.footer-box h3{
+
+    font-size:22px;
+    margin-bottom:20px;
+    color:#f5c542;
+
+}
+
+
+.footer-box p{
+
+    font-size:16px;
+    line-height:1.8;
+    color:#ddd;
+
+}
+
+
+/* Quick Links */
+
+
+.footer-box ul{
+
+    list-style:none;
+    padding:0;
+
+}
+
+
+.footer-box ul li{
+
+    margin-bottom:12px;
+
+}
+
+
+.footer-box ul li a{
+
+    text-decoration:none;
+    color:#ddd;
+    font-size:16px;
+    transition:0.3s;
+
+}
+
+
+.footer-box ul li a:hover{
+
+    color:#f5c542;
+    padding-left:8px;
+
+}
+
+
+
+/* Contact Icons */
+
+
+.footer-box p i{
+
+    color:#f5c542;
+    margin-right:10px;
+    font-size:18px;
+
+}
+
+
+
+/* Social Media */
+
+
+.social{
+
+    display:flex;
+    gap:15px;
+
+}
+
+
+.social a{
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#ffffff;
+    color:#0b1d3a;
+
+    border-radius:50%;
+    font-size:22px;
+
+    transition:0.4s;
+
+}
+
+
+
+.social a:hover{
+
+    background:#f5c542;
+    color:white;
+    transform:translateY(-5px);
+
+}
+
+
+
+/* Bottom Copyright */
+
+
+.copyright{
+
+    margin-top:40px;
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,0.3);
+
+    text-align:center;
+
+}
+
+
+.copyright p{
+
+    color:#ccc;
+    font-size:15px;
+
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:992px){
+
+    .footer-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:600px){
+
+    .footer-container{
+
+        grid-template-columns:1fr;
+        text-align:center;
+
+    }
+
+
+    .social{
+
+        justify-content:center;
+
+    }
+
+
+}
+/* ================= SERVICE FAQ ================= */
+
+
+.service-faq{
+
+    padding:80px 8%;
+    background:#f5f7fb;
+
+}
+
+
+.service-faq h1{
+
+    text-align:center;
+    font-size:38px;
+    color:#0b3d91;
+    margin-bottom:50px;
+
+}
+
+
+
+.faq-container{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+
+}
+
+
+
+.faq-box{
+
+    background:white;
+    padding:30px;
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+    transition:0.4s;
+
+}
+
+
+
+.faq-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+}
+
+
+
+.faq-box h2{
+
+    font-size:20px;
+    color:#0b3d91;
+
+    line-height:1.5;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.faq-box h2 i{
+
+    color:#f5c542;
+    margin-right:10px;
+
+}
+
+
+
+.faq-box p{
+
+    font-size:16px;
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+
+/* ================= SERVICE BANNER ================= */
+
+
+
+.service-banner{
+
+    height:400px;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.65)
+    ),
+
+    url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655")
+    center/cover;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+
+.banner-content{
+
+    max-width:800px;
+
+}
+
+
+
+.banner-content h1{
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.banner-content p{
+
+    font-size:20px;
+
+    line-height:1.6;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* Apply Button */
+
+
+.service-banner .btn{
+
+
+    display:inline-block;
+
+    padding:14px 35px;
+
+    background:#f5c542;
+
+    color:#0b1d3a;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    border-radius:30px;
+
+    transition:0.3s;
+
+
+}
+
+
+
+.service-banner .btn:hover{
+
+    background:white;
+
+    color:#0b3d91;
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+
+@media(max-width:992px){
+
+
+    .faq-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .faq-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .service-faq h1{
+
+        font-size:30px;
+
+    }
+
+
+    .banner-content h1{
+
+        font-size:32px;
+
+    }
+
+
+    .banner-content p{
+
+        font-size:16px;
+
+    }
+
+
+}

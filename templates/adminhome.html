@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',filename='adminhome.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>ABC College</h2>
+
+    <ul>
+
+        <li><a href="/adminhome">🏠 Home</a></li>
+
+        <li><a href="/addcourses">📚 Add Courses</a></li>
+
+        <li><a href="/viewcourse">📖 View Courses</a></li>
+
+        <li><a href="/admissions">🎓 Admissions</a></li>
+
+        <li><a href="/results">📝 Results</a></li>
+
+        <li><a href="/reports">📊 Reports</a></li>
+
+        <li><a href="/logout">🚪 Logout</a></li>
+        <li><a href="/adminlogin">🚪 back to home</a></li>
+
+    </ul>
+
+</div>
+
+<div class="content">
+
+<header>
+
+<h1>Admin Dashboard</h1>
+
+<p>Welcome Administrator</p>
+
+</header>
+
+<div class="cards">
+
+<div class="card">
+<h2>520</h2>
+<p>Total Students</p>
+</div>
+
+<div class="card">
+<h2>8</h2>
+<p>Total Courses</p>
+</div>
+
+<div class="card">
+<h2>120</h2>
+<p>Admissions</p>
+</div>
+
+<div class="card">
+<h2>Published</h2>
+<p>Results</p>
+</div>
+
+</div>
+
+<div class="activity">
+
+<h2>Recent Activities</h2>
+
+<table>
+
+<tr>
+
+<th>Date</th>
+
+<th>Activity</th>
+
+<th>Status</th>
+
+</tr>
+
+<tr>
+
+<td>24-07-2026</td>
+
+<td>Student Admission</td>
+
+<td>Completed</td>
+
+</tr>
+
+<tr>
+
+<td>24-07-2026</td>
+
+<td>Course Added</td>
+
+<td>Completed</td>
+
+</tr>
+
+<tr>
+
+<td>23-07-2026</td>
+
+<td>Semester Results</td>
+
+<td>Published</td>
+
+</tr>
+
+<tr>
+
+<td>22-07-2026</td>
+
+<td>Report Generated</td>
+
+<td>Done</td>
+
+</tr>
+
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>

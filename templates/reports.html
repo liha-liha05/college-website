@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>ABC College</h2>
+        <p>Admin Dashboard</p>
+    </div>
+
+    <ul>
+
+        <li><a href="/adminhome"><i class="fas fa-home"></i> Home</a></li>
+
+        <li><a href="/addcourse"><i class="fas fa-book"></i> Add Courses</a></li>
+
+        <li><a href="/viewcourse"><i class="fas fa-list"></i> View Courses</a></li>
+
+        <li><a href="/admissions"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+
+        <li><a href="/results"><i class="fas fa-square-poll-vertical"></i> Results</a></li>
+
+        <li class="active"><a href="/reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+
+        <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+         <li><a href="/adminlogin">🚪 back to home</a></li>
+
+    </ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+    <div class="topbar">
+
+        <h2>College Reports</h2>
+
+        <div class="profile">
+            Welcome Admin
+        </div>
+
+    </div>
+
+    <!-- Summary Cards -->
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-user-graduate"></i>
+            <h1>550</h1>
+            <p>Total Students</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-book"></i>
+            <h1>10</h1>
+            <p>Total Courses</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-user-check"></i>
+            <h1>520</h1>
+            <p>Admissions</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-award"></i>
+            <h1>490</h1>
+            <p>Passed Students</p>
+        </div>
+
+    </div>
+
+    <!-- Report Table -->
+
+    <div class="table-container">
+
+        <h2>Department Wise Report</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Department</th>
+                <th>Students</th>
+                <th>Faculty</th>
+                <th>Pass %</th>
+
+            </tr>
+
+            <tr>
+                <td>CSE</td>
+                <td>120</td>
+                <td>18</td>
+                <td>98%</td>
+            </tr>
+
+            <tr>
+                <td>IT</td>
+                <td>90</td>
+                <td>15</td>
+                <td>95%</td>
+            </tr>
+
+            <tr>
+                <td>ECE</td>
+                <td>100</td>
+                <td>16</td>
+                <td>93%</td>
+            </tr>
+
+            <tr>
+                <td>EEE</td>
+                <td>80</td>
+                <td>14</td>
+                <td>90%</td>
+            </tr>
+
+            <tr>
+                <td>MECH</td>
+                <td>90</td>
+                <td>15</td>
+                <td>92%</td>
+            </tr>
+
+            <tr>
+                <td>CIVIL</td>
+                <td>70</td>
+                <td>12</td>
+                <td>89%</td>
+            </tr>
+
+        </table>
+
+        <br>
+
+        <button class="btn">
+            <i class="fas fa-download"></i> Download Report
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>ABC College</h2>
+        <p>Admin Dashboard</p>
+    </div>
+
+    <ul>
+
+        <li><a href="/adminhome"><i class="fas fa-home"></i> Home</a></li>
+
+        <li><a href="/addcourse"><i class="fas fa-book"></i> Add Courses</a></li>
+
+        <li><a href="/viewcourse"><i class="fas fa-list"></i> View Courses</a></li>
+
+        <li class="active"><a href="/admissions"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+
+        <li><a href="/results"><i class="fas fa-poll"></i> Results</a></li>
+
+        <li><a href="/reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+
+        <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+         <li><a href="/adminlogin">🚪 back to home</a></li>
+
+    </ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+    <div class="topbar">
+
+        <h2>Student Admission</h2>
+
+        <div class="profile">
+            Welcome Admin
+        </div>
+
+    </div>
+
+    <div class="form-container">
+
+        <h2>Online Admission Form</h2>
+
+        <form action="/newadmission" method="POST">
+
+            <div class="row">
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Date of Birth</label>
+                    <input type="date" name="dob" required>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="input-group">
+                    <label>Gender</label>
+                    <select name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" required>
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Address</label>
+
+                <textarea name="address" rows="4" required></textarea>
+
+            </div>
+
+            <br>
+
+            <div class="row">
+
+                <div class="input-group">
+
+                    <label>Select Department</label>
+
+                    <select name="department">
+
+                        <option value="">Choose Department</option>
+                        <option>Computer Science Engineering</option>
+                        <option>Information Technology</option>
+                        <option>Electronics & Communication Engineering</option>
+                        <option>Electrical & Electronics Engineering</option>
+                        <option>Mechanical Engineering</option>
+                        <option>Civil Engineering</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Higher Secondary Percentage</label>
+
+                    <input type="number" name="percentage" min="0" max="100" required>
+
+                </div>
+
+            </div>
+
+            <button class="btn" type="submit">
+                Submit Admission
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
