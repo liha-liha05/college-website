@@ -124,7 +124,7 @@ def newlogin():
     email= request.form['email']
     password = request.form['password']
 
-   conn = get_db_connection()
+    conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("select * from admission where email_address='"+email+"' and email_password='"+password+"'")
     data=cursor.fetchone()
@@ -145,16 +145,6 @@ conn = mysql.connector.connect(
     password="",
     database="sample"
 )
-
-
-
-
-
-
-
-
-
-
 # Testing only
 @app.route("/userhome")
 def userhome():
@@ -190,7 +180,7 @@ def addcourse():
         fee = request.form["fee"]
         seats = request.form["seats"]
         description = request.form["description"]
-      conn = get_db_connection()
+        conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute(
             "insert into addcourse value('','" + coursename + "','" + department + "','" + duration + "','" + fee+ "','" + seats + "','" + description + "')")
