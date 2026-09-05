@@ -17,7 +17,31 @@ def get_db_connection():
     return conn
 
 # --- ROUTES ---
-
+@app.route("/fixdb")
+def fixdb():
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("DROP TABLE IF EXISTS admission;")
+        cursor.execute("""
+            CREATE TABLE admission (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                fullname VARCHAR(255),
+                dob VARCHAR(50),
+                gender VARCHAR(20),
+                email_address VARCHAR(255),
+                email_password VARCHAR(255),
+                phone VARCHAR(20),
+                address TEXT,
+                department VARCHAR(100),
+                percentage VARCHAR(20)
+            );
+        """)
+        conn.commit()
+        conn.close()
+        return "<h1>Table Fixed Success da Liya! ✅ Ipo /newadmission work aagum da!</h1>"
+    except Exception as e:
+        return f"<h2>Error da:</h2> <p>{e}</p>"
 @app.route("/")
 def home():
     return render_template("index.html")
