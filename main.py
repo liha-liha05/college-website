@@ -9,7 +9,7 @@ def get_db_connection():
     conn = mysql.connector.connect(
         host="gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
         user="2ccbG9b8n5aKk7Q.root",
-        password="YOUR_TIDB_PASSWORD", # <--- Inga un TiDB password podu da!
+        password="AVNS_NHmxFYh4uNiLj2i0by-", # <--- Inga un TiDB password podu da!
         database="college",
         port=4000,
         ssl_verify_identity=True,
