@@ -4,16 +4,15 @@ import os
 
 app = Flask(__name__)
 
-# --- DATABASE CONNECTION ---
+# --- DATABASE CONNECTION - AIVEN CORRECT DA ---
 def get_db_connection():
     conn = mysql.connector.connect(
-        host="gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
-        user="2ccbG9b8n5aKk7Q.root",
-        password="AVNS_NHmxFYh4uNiLj2i0by-", # <--- Inga un TiDB password podu da!
-        database="college",
-        port=4000,
-        ssl_verify_identity=True,
-        ssl_ca="/etc/ssl/certs/ca-certificates.crt" 
+        host="mysql-16b5aed2-liyanasaifullah2022-d091.k.aivencloud.com",
+        port=13818,
+        user="avnadmin",
+        password=os.getenv("DB_PASSWORD") or "AVNS_NHmxFYh4uNiLj2i0by-",
+        database="defaultdb",
+        ssl_ca="/etc/ssl/certs/ca-certificates.crt"
     )
     return conn
 
@@ -48,7 +47,6 @@ def newadmission():
             conn = get_db_connection()
             cursor = conn.cursor()
             
-            # 100% CORRECT FIX DA - ID ah vittuten
             query = """
                 INSERT INTO admission (fullname, dob, gender, email_address, email_password, phone, address, department, percentage) 
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
