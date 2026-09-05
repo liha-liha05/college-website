@@ -111,7 +111,8 @@ def newadmission():
         hp = request.form['percentage']
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("insert into admission value('"+ name + "','"+ dob + "','"+ gender + "','"+ email + "','"+ password + "','"+ phone + "','"+ address + "','"+ department + "','"+ hp + "')")
+        # FIXED: Added NULL for id and used safe parameterized query
+        cursor.execute("INSERT INTO admission VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (name, dob, gender, email, password, phone, address, department, hp))
         conn.commit()
         conn.close()
         return "Information register Success"
@@ -124,7 +125,7 @@ def newlogin():
         password = request.form['password']
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("select * from admission where email_address='"+email+"' and email_password='"+password+"'")
+        cursor.execute("select * from admission where email_address=%s and email_password=%s", (email, password))
         data=cursor.fetchone()
         conn.close()
         if data is None:
@@ -164,7 +165,7 @@ def addcourse():
         description = request.form["description"]
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("insert into addcourse value('','" + coursename + "','" + department + "','" + duration + "','" + fee+ "','" + seats + "','" + description + "')")
+        cursor.execute("insert into addcourse values (NULL, %s, %s, %s, %s, %s, %s)", (coursename, department, duration, fee, seats, description))
         conn.commit()
         conn.close()
         return "<h2>Course Added Successfully</h2>"
@@ -180,7 +181,7 @@ def usercontact():
         enterquery = request.form["message"]
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("insert into ucontactmsg value('" + stdname + "','" + email + "','" + department + "','" + register+ "','" + enterquery + "')")
+        cursor.execute("insert into ucontactmsg values (%s, %s, %s, %s, %s)", (stdname, email, department, register, enterquery))
         conn.commit()
         conn.close()
         return "<h2>information send successfully</h2>"
@@ -194,7 +195,7 @@ def noticefeedback():
         feedback= request.form["feedback"]
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("insert into sfeedback value('" + name+ "','" + email + "','" + feedback +  "')")
+        cursor.execute("insert into sfeedback values (%s, %s, %s)", (name, email, feedback))
         conn.commit()
         conn.close()
         return "<h2>information send successfully</h2>"
@@ -210,7 +211,7 @@ def contactsubmit():
         msg = request.form["message"]
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("insert into contactmsg value('" + fullname+ "','" + emailadd + "','" + phonenum + "','" + subject+ "','" + msg + "')")
+        cursor.execute("insert into contactmsg values (%s, %s, %s, %s, %s)", (fullname, emailadd, phonenum, subject, msg))
         conn.commit()
         conn.close()
         return "<h2>information send successfully</h2>"
