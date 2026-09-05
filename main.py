@@ -100,25 +100,23 @@ def editcourse():
 def deletecourse():
     return render_template("deletecourse.html")
 
-
 @app.route("/newadmission",methods=['GET','POST'])
 def newadmission():
-    name = request.form['fullname']
-    dob = request.form['dob']
-    gender = request.form['gender']
-    email = request.form['email']
-    password = request.form['password']
-    phone = request.form['phone']
-    address = request.form['address']
-    department = request.form['department']
-    hp = request.form['percentage']
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.execute("insert into admission value('" + name + "','" + dob + "','" + gender + "','" + email + "','"+phone+"','"+address+"','"+department+"','"+hp+"','"+password+"')")
-    conn.commit()
-    conn.close()
-
-
+    if request.method == 'POST':
+        name = request.form['fullname']
+        dob = request.form['dob']
+        gender = request.form['gender']
+        email = request.form['email']
+        password = request.form['password']
+        phone = request.form['phone']
+        address = request.form['address']
+        department = request.form['department']
+        hp = request.form['percentage']
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("insert into admission value('"+ name + "','"+ dob + "','"+ gender + "','"+ email + "','"+ password + "','"+ phone + "','"+ address + "','"+ department + "','"+ hp + "')")
+        conn.commit()
+        conn.close()
     return "Information register Success"
 @app.route("/newlogin",methods=['GET','POST'])
 def newlogin():
