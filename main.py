@@ -1,21 +1,22 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, flash, request, session, redirect
+from werkzeug.utils import secure_filename
 import mysql.connector
 import os
+import random
+
+def get_db_connection():
+    return mysql.connector.connect(
+        user=os.getenv('DB_USER'),
+        password=os.getenv('DB_PASSWORD'),
+        host=os.getenv('DB_HOST'),
+        database=os.getenv('DB_NAME'),
+        port=int(os.getenv('DB_PORT', 13818))
+    )
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
 
-# DB Connect Function - Ithu than Aiven kitta connect pannum da
-def get_db_connection():
-    conn = mysql.connector.connect(
-        host=os.getenv("DB_HOST"),
-        port=os.getenv("DB_PORT"),
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD"),
-        database=os.getenv("DB_NAME")
-    )
-    return conn
-
-# Table auto create panna - Nee Aiven ku poga venda da
+# INTHA ROUTE AH ADD PANNU DA LIYA - Table create panna
 @app.route("/fixdb")
 def fixdb():
     try:
@@ -36,43 +37,235 @@ def fixdb():
                 percentage VARCHAR(20)
             );
         """)
+        cursor.execute("DROP TABLE IF EXISTS addcourse;")
+        cursor.execute("""
+            CREATE TABLE addcourse (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                coursename VARCHAR(255),
+                department VARCHAR(100),
+                duration VARCHAR(50),
+                fee VARCHAR(50),
+                seats VARCHAR(50),
+                description TEXT
+            );
+        """)
+        cursor.execute("DROP TABLE IF EXISTS ucontactmsg;")
+        cursor.execute("CREATE TABLE ucontactmsg (stdname VARCHAR(255), email VARCHAR(255), department VARCHAR(100), registerno VARCHAR(100), message TEXT);")
+        cursor.execute("DROP TABLE IF EXISTS sfeedback;")
+        cursor.execute("CREATE TABLE sfeedback (name VARCHAR(255), email VARCHAR(255), feedback TEXT);")
+        cursor.execute("DROP TABLE IF EXISTS contactmsg;")
+        cursor.execute("CREATE TABLE contactmsg (fullname VARCHAR(255), email VARCHAR(255), phone VARCHAR(20), subject VARCHAR(255), message TEXT);")
         conn.commit()
         conn.close()
-        return "<h1>Table Ready da Liya! ✅ Ipo /newadmission work aagum da!</h1>"
+        return "<h1>All Tables Ready da Liya! ✅ Ipo newadmission work aagum da!</h1>"
     except Exception as e:
         return f"<h2>Error da: {e}</h2>"
 
+# Un routes ellam apdiye irukkattum da
 @app.route("/")
-def home():
+def index():
     return render_template("index.html")
+@app.route("/about")
+def about():
+    return render_template("about.html")
+@app.route("/register")
+def register():
+    return render_template("register.html")
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+@app.route("/services")
+def services():
+    return render_template("services.html")
+@app.route("/login")
+def login():
+    return render_template("login.html")
+@app.route("/departments")
+def departments():
+    return render_template("departments.html")
+@app.route("/admission")
+def admission():
+    return render_template("admission.html")
+@app.route("/admissions")
+def admissions():
+    return render_template("admissions.html")
+@app.route("/admin")
+def admin():
+    return render_template("adminlogin.html")
+@app.route("/user")
+def user():
+    return render_template("user.html")
+@app.route("/adminhome")
+def adminhome():
+    return render_template("adminhome.html")
+@app.route("/addcourses")
+def addcourses():
+    return render_template("addcourse.html")
+@app.route("/viewcourse")
+def viewcourse():
+    return render_template("viewcourse.html")
+@app.route("/results")
+def results():
+    return render_template("results.html")
+@app.route("/reports")
+def reports():
+    return render_template("reports.html")
+@app.route("/logout")
+def logout():
+    session.clear()
+    return render_template("logout.html")
+@app.route("/slogout")
+def slogout():
+    session.clear()
+    return render_template("slogout.html")
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
+@app.route("/attendance")
+def attendance():
+    return render_template("attendance.html")
+@app.route("/result")
+def result():
+    return render_template("result.html")
+@app.route("/courses2")
+def courses2():
+    return render_template("courses2.html")
+@app.route("/contact2")
+def contact2():
+    return render_template("contact2.html")
+@app.route("/notice")
+def notice():
+    return render_template("notice.html")
+@app.route("/editcourse")
+def editcourse():
+    return render_template("editcourse.html")
+@app.route("/deletecourse")
+def deletecourse():
+    return render_template("deletecourse.html")
 
-@app.route("/newadmission", methods=["GET", "POST"])
+# FIXED CODE DA LIYA
+@app.route("/newadmission",methods=['GET','POST'])
 def newadmission():
+    if request.method == 'POST':
+        name = request.form['fullname']
+        dob = request.form['dob']
+        gender = request.form['gender']
+        email = request.form['email']
+        password = request.form['password']
+        phone = request.form['phone']
+        address = request.form['address']
+        department = request.form['department']
+        hp = request.form['percentage']
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO admission (fullname, dob, gender, email_address, email_password, phone, address, department, percentage) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)", (name, dob, gender, email, password, phone, address, department, hp))
+        conn.commit()
+        conn.close()
+        return "Information register Success"
+    return render_template("admission.html")
+
+@app.route("/newlogin",methods=['GET','POST'])
+def newlogin():
+    if request.method == 'POST':
+        email= request.form['email']
+        password = request.form['password']
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("select * from admission where email_address=%s and email_password=%s", (email, password))
+        data=cursor.fetchone()
+        conn.close()
+        if data is None:
+            return "email and password Wrong"
+        else:
+            session["email"]=email
+            return render_template("otp.html",uname=email)
+    return render_template("login.html")
+
+@app.route("/userhome")
+def userhome():
+    uname=session.get('email')
+    return render_template("userhome.html",uname=uname)
+
+ADMIN_USERNAME = "admin"
+ADMIN_PASSWORD = "admin123"
+
+@app.route("/adminlogin", methods=["GET", "POST"])
+def adminlogin():
     if request.method == "POST":
-        try:
-            fullname = request.form['fullname']
-            dob = request.form['dob']
-            gender = request.form['gender']
-            email_address = request.form['email']
-            email_password = request.form['email_password']
-            phone = request.form['phone']
-            address = request.form['address']
-            department = request.form['department']
-            percentage = request.form['percentage']
+        username = request.form["username"]
+        password = request.form["password"]
+        if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
+            return render_template("adminhome.html")
+        else:
+            return "<h2>Invalid Username or Password</h2>"
+    return render_template("adminlogin.html")
 
-            conn = get_db_connection()
-            cursor = conn.cursor()
-            cursor.execute("""
-                INSERT INTO admission (fullname, dob, gender, email_address, email_password, phone, address, department, percentage)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """, (fullname, dob, gender, email_address, email_password, phone, address, department, percentage))
-            conn.commit()
-            conn.close()
-            return "<h1>Admission Success da Liya! ✅</h1> <a href='/'>Home ku po da</a>"
-        except Exception as e:
-            return f"<h2>DB Error da: {e}</h2> <br> <a href='/fixdb'>First /fixdb click pannu da</a>"
+@app.route("/addcourse", methods=["GET", "POST"])
+def addcourse():
+    if request.method == "POST":
+        coursename = request.form["coursename"]
+        department = request.form["department"]
+        duration = request.form["duration"]
+        fee = request.form["fee"]
+        seats = request.form["seats"]
+        description = request.form["description"]
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO addcourse (coursename, department, duration, fee, seats, description) VALUES (%s,%s,%s,%s,%s,%s)", (coursename, department, duration, fee, seats, description))
+        conn.commit()
+        conn.close()
+        return "<h2>Course Added Successfully</h2>"
+    return render_template("addcourse.html")
 
-    return render_template("newadmission.html")
+@app.route("/usercontact", methods=["GET", "POST"])
+def usercontact():
+    if request.method == "POST":
+        stdname = request.form["name"]
+        email = request.form["email"]
+        department = request.form["department"]
+        register = request.form["rollno"]
+        enterquery = request.form["message"]
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO ucontactmsg VALUES (%s,%s,%s,%s,%s)", (stdname, email, department, register, enterquery))
+        conn.commit()
+        conn.close()
+        return "<h2>information send successfully</h2>"
+    return render_template("usercontact.html")
+
+@app.route("/noticefeedback", methods=["GET", "POST"])
+def noticefeedback():
+    if request.method == "POST":
+        name = request.form["name"]
+        email = request.form["email"]
+        feedback= request.form["feedback"]
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO sfeedback VALUES (%s,%s,%s)", (name, email, feedback))
+        conn.commit()
+        conn.close()
+        return "<h2>information send successfully</h2>"
+    return render_template("noticefeedback.html")
+
+@app.route("/contactsubmit", methods=["GET", "POST"])
+def contactsubmit():
+    if request.method == "POST":
+        fullname = request.form["name"]
+        emailadd = request.form["email"]
+        phonenum = request.form["phone"]
+        subject = request.form["subject"]
+        msg = request.form["message"]
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO contactmsg VALUES (%s,%s,%s,%s,%s)", (fullname, emailadd, phonenum, subject, msg))
+        conn.commit()
+        conn.close()
+        return "<h2>information send successfully</h2>"
+    return render_template("contact.html")
+
+@app.route("/verifyotp")
+def verifyotp():
+    return render_template("otp.html")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run(host='0.0.0.0', port=10000)
