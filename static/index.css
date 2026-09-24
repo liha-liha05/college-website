@@ -1,3 +1,109 @@
+Aah okay 👍 now clear-ah theriyudhu. Un static folder-la separate CSS file for each page irukku:
+
+index.css → Home
+about.css → About
+departments.css → Departments
+admission.css / admissions.css
+contact.css
+admin.css
+adminhome.css
+addcourse.css
+attendance.css
+etc.
+Ippo first index.css-la start pannuvom ✅
+
+Screenshot-la bottom-la index.css irukku. Adha click pannu.
+
+Inside irukkura full code-a copy panni inga paste pannu.
+
+Adha paathuttu naan:
+
+Existing design enna classes use pannuthu-nu check pannuren
+Mobile responsive CSS ready pannuren
+Exactly index.css-oda end-la enna add pannanum nu kudukren
+Navbar + hero + cards + sections ellam mobile-ku adjust pannuvom.
+
+⚠️ Ippo screenshot-la irukkura CSS files ellathulayum same responsive code paste panna vendam. Each page-ku different structure irukkum.
+
+First → index.css open → full code send.
+Adhukku apram one by one about.css, departments.css etc. fix pannalaam.
+
+Aama, ippo full list clear-ah theriyudhu 👍
+
+static folder-la many page-specific CSS files irukku. So responsive-a make panna one CSS file mattum change pannina podhadhu.
+
+But first namma Home page-a fix pannuvom.
+
+Ippo nee pannunga 👇
+
+index.css file-a click pannu.
+
+Adhu open aana page-la:
+
+Edit / pencil icon → Ctrl + A → Ctrl + C
+
+Then inga paste pannunga.
+
+Example:
+
+body {
+   ...
+}
+
+.navbar {
+   ...
+}
+
+/* remaining code */
+
+Full index.css code venum.
+
+Adha anuppina, naan unakku exact-ah responsive version ready panniduven — especially:
+
+📱 Mobile navbar
+📱 Hero/banner
+📱 Cards
+📱 Images
+📱 Buttons
+📱 Text
+📱 Sections
+💻 Desktop design preserve
+
+Important: Ippo style.css, about.css, admin.css ellam touch panna vendam. First index.css mattum. Then page-by-page proceed pannalam.
+
+Pasted text(1).txt
+Document
+
+Yes! 👍 Ippo index.css full code vandhudhu. Un existing design nalla structured-ah irukku. Main problem responsive rules romba limited — currently @media only footer-ku irukku.
+
+So full CSS-a change panna vendam. index.css-oda very bottom-la irukkura existing Responsive Design section-a replace pannunga.
+
+1. Existing bottom section-a delete pannunga
+
+index.css bottom-la irukkura:
+
+/* Responsive Design */
+
+@media(max-width:1000px){
+    .footer-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .footer-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .social{
+        justify-content:center;
+    }
+}
+
+Idha complete-ah remove pannunga.
+
+2. Adhukku badhila idha paste pannunga
 /* ================= RESPONSIVE DESIGN ================= */
 
 /* ---------- TABLET ---------- */
@@ -526,3 +632,1746 @@
         width: 130px;
     }
 }
+Idhu enna fix pannum?
+
+Un existing CSS-la desktop-ku:
+
+repeat(4,1fr)
+repeat(3,1fr)
+repeat(6,1fr)
+
+maadhiri fixed grids irukku. Mobile-la adhu cramped aagum. For example, .choose-container currently 6 columns, .gallery-container 4 columns, .stats 4 columns.
+
+Naan kudutha CSS-la:
+
+Desktop → same design
+Tablet → 2/3 columns
+Mobile → 1 column / 2 columns where suitable
+
+Also .about and .principal desktop-la side-by-side irukku; mobile-la vertical-a maarum.
+
+⚠️ One thing
+
+Navbar மட்டும் proper hamburger menu ஆகாது. Ippo namma mobile-la links vertical-ah arrange pannirukkom. Actual ☰ hamburger menu venumna HTML + small JavaScript change venum.
+
+So first indha CSS save panni website mobile-la check pannu.
+
+GitHub-la:
+Edit → paste → Commit changes
+
+Then un mobile browser-la website open panni paaru.
+
+Adhukku next about.css responsive pannalaam.
+
+/* ================= GLOBAL ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing;
+font-family:'Poppins',Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+color:#333;
+}
+
+html{
+scroll-behavior;
+}
+
+a{
+text-decoration;
+}
+
+
+
+
+/* ================= TOP BAR ================= */
+
+.topbar{
+
+background:#0b1f3a;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 8%;
+font-size:15px;
+
+}
+
+.topbar a{
+
+color:white;
+margin:0 8px;
+
+}
+
+.topbar a{
+
+color:#ffc107;
+
+}
+
+
+
+
+
+
+
+/* ================= HEADER ================= */
+
+header{
+
+background:white;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+
+
+
+.logo{
+
+display:flex;
+align-items:center;
+gap:20px;
+
+}
+
+
+
+
+.logo img{
+
+width:80px;
+height:80px;
+
+}
+
+
+
+
+.logo h1{
+
+color:#0b1f3a;
+font-size:30px;
+
+}
+
+
+
+
+.logo p{
+
+color:#777;
+margin-top:5px;
+
+}
+
+
+
+
+
+
+
+/* ================= NAVIGATION ================= */
+
+nav{
+
+background:#123c69;
+padding:15px 8%;
+
+}
+
+nav ul{
+
+display:flex;
+justify-content:center;
+list-style:none;
+gap:35px;
+
+}
+
+
+
+
+nav ul li a{
+
+color:white;
+font-size:17px;
+font-weight:500;
+
+}
+
+
+
+
+nav ul li a,
+nav ul li a.active{
+
+color:#ffc107;
+
+}
+
+
+
+
+
+
+
+/* ================= MARQUEE ================= */
+
+.marquee{
+
+background:#ffc107;
+color:#000;
+padding:10px;
+font-weight:bold;
+
+}
+
+
+
+
+
+
+
+/* ================= HERO SECTION ================= */
+
+.hero{
+
+height:600px;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,0.55),
+rgba(0,0,0,0.55)
+),
+
+url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+color:white;
+
+}
+
+
+
+
+
+
+
+.overlay h1{
+
+font-size:50px;
+
+margin-bottom:20px;
+
+}
+
+
+
+
+.overlay p{
+
+font-size:22px;
+
+max-width:800px;
+
+margin:auto;
+
+line-height:1.6;
+
+}
+
+
+
+
+.btn,
+.btn2{
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:14px 30px;
+
+border-radius:5px;
+
+font-weight:bold;
+
+}
+
+
+
+
+.btn{
+
+background:#ffc107;
+
+color:black;
+
+}
+
+
+
+
+.btn2{
+
+background:#0d6efd;
+
+color:white;
+
+margin-left:15px;
+
+}
+
+
+
+
+.btn,
+.btn2{
+
+transform:translateY(-3px);
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ================= ABOUT SECTION ================= */
+
+.about{
+
+padding:70px 8%;
+
+display:flex;
+
+gap:50px;
+
+align-items:center;
+
+background:white;
+
+}
+
+
+
+
+.about-image img{
+
+width:500px;
+
+border-radius:15px;
+
+}
+
+
+
+
+
+
+
+.about-content h2{
+
+font-size:35px;
+
+color:#123c69;
+
+margin-bottom:20px;
+
+}
+
+
+
+
+.about-content p{
+
+line-height:1.8;
+
+margin-bottom:15px;
+
+font-size:17px;
+
+}
+
+
+
+
+.readmore{
+
+display:inline-block;
+
+background:#123c69;
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:5px;
+
+}
+
+
+
+
+
+
+
+/* ================= STATISTICS ================= */
+
+.stats{
+
+background:#123c69;
+
+padding:50px 8%;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+.stat-box{
+
+background:white;
+
+text-align:center;
+
+padding:35px;
+
+border-radius:10px;
+
+transition:.3s;
+
+}
+
+
+
+
+.stat-box{
+
+transform:translateY(-10px);
+
+}
+
+
+
+
+.stat-box h1{
+
+color:#123c69;
+
+font-size:45px;
+
+}
+
+
+
+
+.stat-box p{
+
+font-size:18px;
+
+margin-top:10px;
+
+}/* ================= QUICK LINKS ================= */
+
+.quick{
+
+padding:70px 8%;
+background:#f5f7fb;
+text-align:center;
+
+}
+
+.quick h2{
+
+font-size:35px;
+color:#123c69;
+margin-bottom:40px;
+
+}
+
+
+
+
+.quick-container{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+.quick-card{
+
+background:white;
+
+padding:35px 20px;
+
+border-radius:15px;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+transition:.3s;
+
+}
+
+
+
+
+.quick-card{
+
+transform:translateY(-10px);
+
+}
+
+
+
+
+.quick-card i{
+
+font-size:45px;
+
+color:#123c69;
+
+}
+
+
+
+
+.quick-card h3{
+
+margin:20px 0;
+
+color:#123c69;
+
+}
+
+
+
+
+.quick-card a{
+
+display:inline-block;
+
+margin-top:15px;
+
+background:#ffc107;
+
+color:black;
+
+padding:10px 25px;
+
+border-radius:5px;
+
+}
+
+
+
+
+
+
+
+/* ================= PRINCIPAL SECTION ================= */
+
+.principal{
+
+padding:70px 8%;
+
+display:flex;
+
+align-items:center;
+
+gap:50px;
+
+background:white;
+
+}
+
+
+
+
+.principal-image{
+
+flex:1;
+
+}
+
+
+
+
+.principal-image img{
+
+width:100%;
+
+border-radius:15px;
+
+}
+
+
+
+
+.principal-content{
+
+flex:1;
+
+}
+
+
+
+
+.principal-content h2{
+
+color:#123c69;
+
+font-size:35px;
+
+margin-bottom:20px;
+
+}
+
+
+
+
+.principal-content p{
+
+line-height:1.8;
+
+margin-bottom:15px;
+
+}
+
+
+
+
+
+
+
+/* ================= DEPARTMENTS ================= */
+
+.departments{
+
+padding:70px 8%;
+
+background:#f5f7fb;
+
+text-align:center;
+
+}
+
+
+
+
+.departments h2{
+
+font-size:35px;
+
+color:#123c69;
+
+margin-bottom:40px;
+
+}
+
+
+
+
+.department-container{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+.department-card{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+transition:.3s;
+
+}
+
+
+
+
+.department-card{
+
+transform:translateY(-10px);
+
+}
+
+
+
+
+.department-card img{
+
+width:100%;
+
+height:230px;
+
+object-fit:cover;
+
+}
+
+
+
+
+.department-card h3{
+
+padding:20px 10px 10px;
+
+color:#123c69;
+
+}
+
+
+
+
+.department-card p{
+
+padding:0 20px 25px;
+
+line-height:1.6;
+
+}
+
+
+
+
+
+
+
+/* ================= CAMPUS FACILITIES ================= */
+
+.facilities{
+
+padding:70px 8%;
+
+background:white;
+
+text-align:center;
+
+}
+
+
+
+
+.facilities h2{
+
+color:#123c69;
+
+font-size:35px;
+
+margin-bottom:40px;
+
+}
+
+
+
+
+.facility-container{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+.facility-card{
+
+background:#f5f7fb;
+
+border-radius:15px;
+
+overflow:hidden;
+
+transition:.3s;
+
+}
+
+
+
+
+.facility-card{
+
+transform:scale(1.03);
+
+}
+
+
+
+
+.facility-card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+}
+
+
+
+
+.facility-card h3{
+
+padding:20px;
+
+color:#123c69;
+
+}
+
+
+
+
+
+
+
+/* ================= NEWS ================= */
+
+.news{
+
+padding:70px 8%;
+
+background:#f5f7fb;
+
+text-align:center;
+
+}
+
+
+
+
+.news h2{
+
+font-size:35px;
+
+color:#123c69;
+
+margin-bottom:40px;
+
+}
+
+
+
+
+.news-container{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+.news-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+
+
+
+.news-card i{
+
+font-size:40px;
+
+color:#ffc107;
+
+}
+
+
+
+
+.news-card h3{
+
+color:#123c69;
+
+margin:20px 0;
+
+}
+
+
+
+
+.news-card p{
+
+line-height:1.6;
+
+}
+
+
+
+
+
+
+
+/* ================= EVENTS ================= */
+
+.events{
+
+padding:70px 8%;
+
+background:white;
+
+text-align:center;
+
+}
+
+
+
+
+.events h2{
+
+color:#123c69;
+
+font-size:35px;
+
+margin-bottom:40px;
+
+}
+
+
+
+
+.event-container{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+
+
+
+.event-card{
+
+background:#f5f7fb;
+
+border-radius:15px;
+
+overflow:hidden;
+
+}
+
+
+
+
+.event-card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+}
+
+
+
+
+.event-card h3{
+
+padding:20px 10px 5px;
+
+color:#123c69;
+
+}
+
+
+
+
+.event-card p{
+
+padding-bottom:20px;
+
+}
+/* ================= WHY CHOOSE US ================= */
+
+.choose{
+
+padding:70px 8%;
+background:#123c69;
+text-align:center;
+
+}
+
+
+
+
+.choose h2{
+
+color:white;
+font-size:35px;
+margin-bottom:40px;
+
+}
+
+
+
+
+.choose-container{
+
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:20px;
+
+}
+
+
+
+
+.choose-card{
+
+background:white;
+padding:30px 15px;
+border-radius:12px;
+transition:.3s;
+
+}
+
+
+
+
+.choose-card{
+
+transform:translateY(-10px);
+
+}
+
+
+
+
+.choose-card i{
+
+font-size:40px;
+color:#123c69;
+
+}
+
+
+
+
+.choose-card h3{
+
+margin:20px 0;
+color:#123c69;
+
+}
+
+
+
+
+/* ================= PLACEMENT ================= */
+
+.placement{
+
+padding:70px 8%;
+background:#f5f7fb;
+text-align:center;
+
+}
+
+
+
+
+.placement h2{
+
+color:#123c69;
+font-size:35px;
+margin-bottom:40px;
+
+}
+
+
+
+
+.placement-container{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+
+}
+
+
+
+
+.placement-card{
+
+background:white;
+padding:35px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+
+
+
+.placement-card i{
+
+font-size:40px;
+color:#ffc107;
+
+}
+
+
+
+
+.placement-card h1{
+
+font-size:45px;
+color:#123c69;
+margin:15px 0;
+
+}
+
+
+
+
+
+
+
+/* ================= RECRUITERS ================= */
+
+.recruiters{
+
+padding:70px 8%;
+background:white;
+text-align:center;
+
+}
+
+
+
+
+.recruiters h2{
+
+color:#123c69;
+font-size:35px;
+margin-bottom:40px;
+
+}
+
+
+
+
+.company-container{
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+gap:30px;
+
+}
+
+
+
+
+.company-card{
+
+width:180px;
+height:100px;
+background:#f5f7fb;
+border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+
+}
+
+
+
+
+.company-card img{
+
+max-width:130px;
+max-height:60px;
+
+}
+
+
+
+
+
+
+
+/* ================= GALLERY ================= */
+
+.gallery{
+
+padding:70px 8%;
+background:#f5f7fb;
+text-align:center;
+
+}
+
+
+
+
+.gallery h2{
+
+font-size:35px;
+color:#123c69;
+margin-bottom:40px;
+
+}
+
+
+
+
+.gallery-container{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+
+}
+
+
+
+
+.gallery-container img{
+
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:12px;
+transition:.3s;
+
+}
+
+
+
+
+.gallery-container img{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+
+
+/* ================= TESTIMONIAL ================= */
+
+.testimonial{
+
+padding:70px 8%;
+background:white;
+text-align:center;
+
+}
+
+
+
+
+.testimonial h2{
+
+color:#123c69;
+font-size:35px;
+margin-bottom:40px;
+
+}
+
+
+
+
+.testimonial-container{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+
+
+
+.testimonial-card{
+
+background:#f5f7fb;
+padding:30px;
+border-radius:15px;
+
+}
+
+
+
+
+.testimonial-card img{
+
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+
+}
+
+
+
+
+.testimonial-card h3{
+
+color:#123c69;
+margin:15px;
+
+}
+
+
+
+
+.stars{
+
+color:#ffc107;
+font-size:22px;
+
+}
+
+
+
+
+.testimonial-card p{
+
+line-height:1.7;
+margin-top:15px;
+
+}
+
+
+
+
+
+
+
+/* ================= CONTACT ================= */
+
+.contact-home{
+
+padding:70px 8%;
+background:#123c69;
+text-align:center;
+
+}
+
+
+
+
+.contact-home h2{
+
+color:white;
+font-size:35px;
+margin-bottom:40px;
+
+}
+
+
+
+
+.contact-container{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+
+
+
+.contact-card{
+
+background:white;
+padding:35px;
+border-radius:15px;
+
+}
+
+
+
+
+.contact-card i{
+
+font-size:40px;
+color:#ffc107;
+
+}
+
+
+
+
+.contact-card h3{
+
+color:#123c69;
+margin:15px;
+
+}
+
+
+
+
+/* ================= MAP ================= */
+
+.map{
+
+padding:50px 8%;
+background:white;
+
+}
+
+
+
+
+.map h2{
+
+text-align:center;
+color:#123c69;
+margin-bottom:30px;
+
+}
+
+
+
+
+.map iframe{
+
+border-radius:15px;
+
+}
+
+
+
+
+
+
+
+/* ================= BANNER ================= */
+
+.home-banner{
+
+height:350px;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.6),
+rgba(0,0,0,.6)
+),
+
+url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+color:white;
+
+}
+
+
+
+
+.banner-content h1{
+
+font-size:40px;
+
+}
+
+
+
+
+.banner-content p{
+
+font-size:20px;
+margin:20px;
+
+}
+/* ================= FOOTER ================= */
+
+footer{
+
+background:#081b33;
+color:white;
+padding:60px 8% 20px;
+font-family:Arial, sans-serif;
+
+}
+
+
+
+
+.footer-container{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+
+}
+
+
+
+
+/* Footer Heading */
+
+.footer-box h2{
+
+color:#f7b500;
+font-size:26px;
+margin-bottom:15px;
+
+}
+
+.footer-box h3{
+
+color:#f7b500;
+font-size:22px;
+margin-bottom:20px;
+
+}
+
+
+
+
+/* Footer Paragraph */
+
+.footer-box p{
+
+color:#d9d9d9;
+font-size:15px;
+line-height:1.8;
+
+}
+
+
+
+
+/* Quick Links */
+
+.footer-box ul{
+
+padding:0;
+list-style:none;
+
+}
+
+.footer-box ul li{
+
+margin-bottom:12px;
+
+}
+
+.footer-box ul li a{
+
+color:#ddd;
+text-decoration:none;
+font-size:16px;
+transition:0.3s;
+
+}
+
+.footer-box ul li a{
+
+color:#f7b500;
+padding-left:10px;
+
+}
+
+
+
+
+/* Contact Icons */
+
+.footer-box p i{
+
+color:#f7b500;
+margin-right:10px;
+font-size:16px;
+
+}
+
+
+
+
+/* Social Media */
+
+.social{
+
+display:flex;
+gap:15px;
+
+}
+
+.social a{
+
+width:45px;
+height:45px;
+
+background:white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:50%;
+
+color:#081b33;
+
+font-size:20px;
+
+transition:0.4s;
+
+}
+
+
+
+
+.social a{
+
+background:#f7b500;
+color:white;
+
+transform:translateY(-5px);
+
+}
+
+
+
+
+/* Copyright */
+
+.copyright{
+
+margin-top:40px;
+padding-top:20px;
+
+border-top:1px solid rgba(255,255,255,0.3);
+
+text-align:center;
+
+}
+
+
+
+
+.copyright p{
+
+color:#ccc;
+font-size:14px;
+
+}
+
+
+
+
+/* Responsive Design */
+
+@media(max-width:1000px){
+
+.footer-container{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+
+@media(max-width:600px){
+
+.footer-container{
+
+grid-template-columns:1fr;
+text-align:center;
+
+}
+
+.social{
+
+justify-content:center;
+
+}
+
+}
+
+Close
